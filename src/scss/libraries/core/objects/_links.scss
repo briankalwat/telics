@@ -9,6 +9,7 @@
         color: $cta-color;
         text-decoration: underline;
         cursor: pointer;
+        letter-spacing: -.25px;
         @include vendor(transition, all $global-duration $global-function);
     
         &:hover {

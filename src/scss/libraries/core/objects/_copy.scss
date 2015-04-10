@@ -11,6 +11,7 @@
     font-size: $font-size;
     line-height: $line-height;
     margin-bottom: $base-spacing-unit/2;
+    letter-spacing: -.5px;
 
     .section--primary &, 
     .section--secondary &, 
@@ -29,12 +30,6 @@
     font-weight: 700;
   }
 
-  .text--constrained {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 860px;
-  }
-
 
 
 
@@ -51,6 +46,7 @@
     line-height: $line-height*.8;
     font-weight: 700;
     margin-bottom: $base-spacing-unit/2;
+    letter-spacing: -.5px;
 
     a {
       font-size: $font-size*.8;

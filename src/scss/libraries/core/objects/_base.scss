@@ -1,6 +1,7 @@
 html {
     font-size: 100%;
-    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility !important;
+    -webkit-font-smoothing: antialiased !important;
 }
 
 
@@ -9,6 +10,7 @@ html {
 // Used to make sure no accidental wide margin/img breaks bounds
 body {
   overflow-x: hidden;
+  color: $dark-color;
   // There's a small bug in webkit that requires a CSS3 property to be set on an element.
   // Read more about it at http://bit.ly/NEdoDq
 }
