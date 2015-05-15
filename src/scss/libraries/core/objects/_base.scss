@@ -67,7 +67,7 @@ hr {
         border-width: 0px;
     }
 
-    .section--dark & {
+    .background-dark & {
         border-color: darken($secondary-color, 15);
     }
 }
@@ -156,11 +156,3 @@ hr {
     $SHAPE UTILITIES
 
 ============================================================ */
-
-.round {
-  @include radius(50%);
-}
-
-.blurred {
-    -webkit-filter: blur(25px);
-}

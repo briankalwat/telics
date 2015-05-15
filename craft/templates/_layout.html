@@ -11,81 +11,70 @@
 
 <body>
 	<header>
-		<div class="shell hard--ends">
-			<div class="soft-half--ends">
-				<div class="grid">
-					<div class="grid__item one-third">
-						<a href="/"><img src="/assets/images/telics_logo.png" alt="" style="max-width: 180px;"></a>
-					</div><div class="grid__item two-thirds">
-						<nav>
-							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Careers</a></li>
-								<li><a href="#">Management</a></li>
-								<li><a href="#">Contact</a></li>
-							</ul>
-						</nav>
+		<div class="image-fill image-blur" style="background-image: url('/assets/images/cat5.jpg');"></div>
+		<div class="shell soft-top">
+			<div class="grid centered color-light">
+				<div class="grid__item lap-and-up-one-third handheld-centered">
+					{% embed "_embeds/logo.twig" %}{% endembed %}
+				</div><div class="grid__item lap-and-up-two-thirds">
+					<nav class="flush">
+						<ul>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Management</a></li>
+							<li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="grid__item centered">
+					<div class="constrained">
+						<p class="text-larger"><b>TELICS is a full service utility design and support firm</b> providing a broad range of integrated services including Design, Right-of-Way and Permitting, Utility Coordination, Traffic Signal Cabling, Special Projects, Staffing and Emergency Response Services.</p>
+						<a href="/services" class="btn flush">Learn More</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</header>
-	<section class="section--primary">
+	<section class="background-medium">
+		<div class="shell">
+			<div class="grid handheld-centered">
+				<div class="grid__item centered">
+					<h2>Experience You Can Trust</h2>
+				</div>
+				<div class="grid__item lap-and-up-one-half">
+					<p class="flush"><b>For over 30 years,</b> TELICS has provided services to Telecommunication and Utility Companies, other consultants, Municipalities and Departments of Transportation.  We have a proven track record of providing our services in a cost effective and timely manner.</p>
+				</div><div class="grid__item lap-and-up-one-half">
+					<p class="flush">Our team strives to conduct ourselves in a manner that reminds our clients and employees of a simpler time when a handshake was a contract. Our standards are based on the values of Integrity, Loyalty, Honestly, Fairness and Excellence.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="background-primary">
 		<div class="shell">
 			<div class="grid centered">
 				<div class="grid__item centered">
 					<div class="constrained">
-						<h2>Welcome to Telics</h2>
-						<p class="text--larger">TELICS is a full service utility design and support firm providing a broad range of integrated services including Design, Right-of-Way and Permitting, Utility Coordination, Traffic Signal Cabling, Special Projects, Staffing and Emergency Response Services.</p>
+						<h2>Have a Project in Mind?</h2>
+						<p class="text-larger">Clients seeking to supplement their internal staff frequently partner with TELICS to better manage resources for significant capital projects, meet critical milestones, and control overhead expense.</p>
+						<a href="/services" class="btn flush">Let's Get Started</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<section>
+	<footer class="background-dark">
 		<div class="shell">
-			<div class="grid">
-				<div class="grid__item lap-and-up-one-half">
-					<p>For over 30 years, TELICS has provided services to Telecommunication and Utility Companies, other consultants, Municipalities and Departments of Transportation.  We have a proven track record of providing our services in a cost effective and timely manner.</p>
-				</div><div class="grid__item lap-and-up-one-half">
-					<p>Our team strives to conduct ourselves in a manner that reminds our clients and employees of a simpler time when a handshake was a contract. Our standards are based on the values of <b>Integrity, Loyalty, Honestly, Fairness and Excellence.</b> </p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<footer class="section--medium">
-		<div class="shell">
-			<div class="grid">
-				<div class="grid__item lap-and-up-one-quarter">
-					<h4>About Us</h4>
-					<p>Lorem ipsum Deserunt incididunt Duis irure quis occaecat ea quis minim aliqua in amet nisi Excepteur non commodo qui Duis deserunt officia commodo magna ut ut.</p>
-					<a href="#">Read More</a>
-				</div><div class="grid__item lap-and-up-one-half">
-					<h4>Services</h4>
-					<div class="grid">
-						<div class="grid__item one-half">
-							<ul>
-								<li><a href="#">Overview</a></li>
-								<li><a href="#">Design</a></li>
-								<li><a href="#">Utility Coordination</a></li>
-								<li><a href="#">Traffic Signal Cabling</a></li>
-								<li><a href="#">Right-of-Way &amp; Relocation</a></li>
-								<li><a href="#">Appraisal</a></li>
-							</ul>
-						</div><div class="grid__item one-half">
-							<ul>
-								<li><a href="#">Pole Inspection &amp; Maint</a></li>
-								<li><a href="#">Special Projects</a></li>
-								<li><a href="#">Permitting</a></li>
-								<li><a href="#">Staffing</a></li>
-								<li><a href="#">Emergency Response</a></li>
-								<li><a href="#">CATV</a></li>
-							</ul>
-						</div>
-					</div>
-				</div><div class="grid__item lap-and-up-one-quarter">
-					<h4>Contact</h4>
+			<div class="grid handheld-centered">
+				<div class="grid__item lap-and-up-two-thirds">
+					<h4>About Telics</h4>
+					<p>TELICS, headquartered near uptown Charlotte, North Carolina employs 200+ associates serving Communications Companies, Consultants, Utility Companies, Departments of Transportation, Municipalities, and Transportation and Infrastructure Contractors.</p>
+					<a href="#" class="link-arrow">Learn More</a>
+				</div><div class="grid__item lap-and-up-one-third">
+					<h4>Contact Us</h4>
+					<p>Monday - Friday<br>9am - 5pm EST<br>(864) 420-0148<br><a href="#">hello@telics.com</a></p>
+				</div><div class="grid__item handheld-centered">
+					<small>&copy; 2015 Telics Communications | All Rights Reserved</small>
 				</div>
 			</div>
 		</div>

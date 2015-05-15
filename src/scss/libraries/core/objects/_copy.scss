@@ -13,15 +13,15 @@
     margin-bottom: $base-spacing-unit/2;
     letter-spacing: -.5px;
 
-    .section--primary &, 
-    .section--secondary &, 
-    .section--tertiary &, 
-    .section--medium &,
-    .section--dark & {
+    .background-primary &, 
+    .background-secondary &, 
+    .background-tertiary &,
+    .background-dark & {
       color: $light-color;
     }
-
-    .section--light & {
+    
+    .background-medium &,
+    .background-light & {
       color: $dark-color;
     }
   }
@@ -53,11 +53,11 @@
       line-height: $line-height*.8;
     }
 
-    .section--primary &,
-    .section--secondary &,
-    .section--tertiary &,
-    .section--medium &,
-    .section--dark & {
+    .background-primary &,
+    .background-secondary &,
+    .background-tertiary &,
+    .background-medium &,
+    .background-dark & {
       color: $light-color;
 
       a {

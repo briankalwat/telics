@@ -6,18 +6,18 @@
         font-size: $font-size;
         line-height: $line-height;
         margin-bottom: $base-spacing-unit/3;
-        color: $cta-color;
+        color: $dark-color;
         text-decoration: underline;
         cursor: pointer;
         letter-spacing: -.25px;
         @include vendor(transition, all $global-duration $global-function);
     
         &:hover {
-            color: darken($cta-color, 20);
+            color: $cta-color;
         }
 
-        .section--primary &,
-        .section--secondary & {
+        .background-primary &,
+        .background-secondary & {
             color: $light-color;
 
             &:hover {
@@ -25,7 +25,7 @@
             }
         }
 
-        .section--tertiary & {
+        .background-tertiary & {
             color: $cta-color;
 
             &:hover {
@@ -33,7 +33,15 @@
             }
         }
 
-        .section--light & {
+        .background-light & {
+            color: $primary-color;
+
+            &:hover {
+                color: darken($primary-color, 10);
+            }
+        }
+
+        .background-medium & {
             color: $light-color;
 
             &:hover {
@@ -41,16 +49,8 @@
             }
         }
 
-        .section--medium & {
+        .background-dark & {
             color: $light-color;
-
-            &:hover {
-                color: $light-color;
-            }
-        }
-
-        .section--dark & {
-            color: $cta-color;
 
             &:hover {
                 color: $cta-color;
@@ -58,18 +58,19 @@
         }
     }
 
-    .link--arrow {
+    .link-arrow {
         display: inline-block;
         position: relative;
         padding: 0 $button-size 0 0;
         font-weight: 600;
         text-decoration: none;
+        margin-bottom: $base-spacing-unit;
 
         &:after {
             position: absolute;
             top: 50%;
             right: 0px;
-            margin-top: -$font-size/5;
+            margin-top: -$font-size/6;
             @include arrow(right, $font-size/2.2, $cta-color, $font-size/7);            
             @include vendor(transition, all $global-duration $global-function);
         }
@@ -95,9 +96,9 @@
             }
         }
         
-        .section--primary &,
-        .section--secondary &,
-        .section--tertiary & {
+        .background-primary &,
+        .background-secondary &,
+        .background-tertiary & {
             color: $light-color;
 
             &:after {
@@ -113,7 +114,7 @@
             }
         }
 
-        .section--light & {
+        .background-light & {
             color: $dark-color;
 
             &:after {
@@ -129,7 +130,7 @@
             }
         }
 
-        .section--medium & {
+        .background-medium & {
             color: darken($medium-color, 30);
 
             &:after {
@@ -145,18 +146,18 @@
             }
         }
 
-        .section--dark & {
-            color: $cta-color;
+        .background-dark & {
+            color: $light-color;
 
             &:after {
-                border-color: $cta-color;
+                border-color: $light-color;
             }
 
             &:hover {
-                color: $cta-color;
+                color: $light-color;
 
                 &:after {
-                    border-color: $cta-color;
+                    border-color: $light-color;
                 }
             }
         }

@@ -105,6 +105,7 @@ gulp.task('default', function() {
 	//watch for changes on transpired templates, css, and js files
 	gulp.watch([
 		'craft/templates/**/*.html',
+		'craft/templates/**/*.twig',
 		'public/assets/js/**/*.min.js',
 		'public/assets/css/**/*.min.css'
 	], function(event) {

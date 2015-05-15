@@ -10,13 +10,13 @@
   	margin: 0 0 $base-spacing-unit/2 0;
 
     li {
-		margin-bottom: $base-spacing-unit/4;
+		  margin-bottom: $base-spacing-unit/4;
 
-		.section--primary &, 
-	    .section--secondary &, 
-	    .section--tertiary &, 
-	    .section--medium &,
-	    .section--dark & {
+		  .background-primary &, 
+	    .background-secondary &, 
+	    .background-tertiary &, 
+	    .background-medium &,
+	    .background-dark & {
 	    	color: $light-color;
 	    }
     }

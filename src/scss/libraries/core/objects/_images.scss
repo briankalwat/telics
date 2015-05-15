@@ -13,20 +13,38 @@
 		}
 	}
 
-	.image--fill {
+	.image-fill {
 		@include absolute(top -50px bottom -50px left -50px right -50px);
 		min-width: 110%;
 		min-height: 110%;
-		z-index: 0;
+		background-position: center top;
+		background-size: cover !important;
+		background-repeat: no-repeat;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			bottom: 0px;
+			left: 0px;
+			background-color: rgba(0,0,0,.2);
+			z-index: 0;
+		}
 	}
 
-	.image--fixed {
+	.image-blur {
+		-webkit-filter: blur(10px);
+	}
+
+	.image-fixed {
 		min-width: 110%;
 		min-height: 110%;
 		@include fixed(top -50px bottom -50px left -50px right -50px);
 	}
 
-	.background--cover {
+	.background-cover {
+		position: relative;
 		background-position: center center;
 		background-size: cover !important;
 		background-repeat: no-repeat;
