@@ -1,6 +1,11 @@
 .logo {
-	max-width: 200px;
-	width: 200px;
+	max-width: 140px;
+	width: 140px;
 	height: 140px;
 	margin-bottom: $base-spacing-unit/2;
+}
+
+nav {
+	position: relative;
+	top: $base-spacing-unit*.8;
 }
