@@ -2,7 +2,6 @@
 
 	.grid, .grid__item {
 		position: relative;
-		@include vendor(transition, all $global-duration $global-function);
 	}
 
 	.grid {

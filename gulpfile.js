@@ -76,7 +76,7 @@ var scssProcessing = lazypipe()
 
 //styles task
 gulp.task('styles', function() {
-	return gulp.src('src/scss/master.scss').pipe(scssProcessing());
+	return gulp.src('src/scss/**.scss').pipe(scssProcessing());
 });
 
 //scripts individual task

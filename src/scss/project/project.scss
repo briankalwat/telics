@@ -1,11 +1,28 @@
 .logo {
+	position: relative;
+	top: 15px;
+	left: -5px;
 	max-width: 140px;
 	width: 140px;
-	height: 140px;
-	margin-bottom: $base-spacing-unit/2;
+	height: 60px;
+	margin-bottom: 0;
 }
 
-nav {
-	position: relative;
-	top: $base-spacing-unit*.8;
+html {
+	background-color: $dark-color;
+}
+
+body {
+
+	& > header {
+		position: fixed;
+		top: 0px;
+		z-index: 1;
+		background-color: $light-color;
+		box-shadow: 0 0 8px rgba(0,0,0,.2);
+
+		& + section {
+			margin-top: 92px;
+		}
+	}
 }

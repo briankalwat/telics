@@ -11,58 +11,63 @@
 
 <body>
 	<header>
-		<div class="image-fill image-blur" style="background-image: url('/assets/images/cat5.jpg');"></div>
-		<div class="shell soft-top">
-			<div class="grid centered color-light">
-				<div class="grid__item lap-and-up-one-third handheld-centered">
-					{% embed "_embeds/logo.twig" %}{% endembed %}
-				</div><div class="grid__item lap-and-up-two-thirds">
-					<nav class="flush">
-						<ul>
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Services</a></li>
-							<li><a href="#">Careers</a></li>
-							<li><a href="#">Management</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="grid__item centered">
-					<div class="constrained">
-						<p class="text-larger"><b>TELICS is a full service utility design and support firm</b> providing a broad range of integrated services including Design, Right-of-Way and Permitting, Utility Coordination, Traffic Signal Cabling, Special Projects, Staffing and Emergency Response Services.</p>
-						<a href="/services" class="btn flush">Learn More</a>
-					</div>
-				</div>
-			</div>
+		<div class="shell hard">
+			<a href="/" class="float--left">{% embed "_embeds/logo.twig" %}{% endembed %}</a>
+			<nav class="flush">
+				<ul>
+					{% for entry in craft.entries.section('pages').level(1) %}<li>
+							<a href="{{ entry.url }}">{{ entry.title }}</a>
+						</li>{% endfor %}
+				</ul>
+			</nav>
 		</div>
 	</header>
-	<section class="background-medium">
-		<div class="shell">
-			<div class="grid handheld-centered">
-				<div class="grid__item centered">
-					<h2>Experience You Can Trust</h2>
-				</div>
-				<div class="grid__item lap-and-up-one-half">
-					<p class="flush"><b>For over 30 years,</b> TELICS has provided services to Telecommunication and Utility Companies, other consultants, Municipalities and Departments of Transportation.  We have a proven track record of providing our services in a cost effective and timely manner.</p>
-				</div><div class="grid__item lap-and-up-one-half">
-					<p class="flush">Our team strives to conduct ourselves in a manner that reminds our clients and employees of a simpler time when a handshake was a contract. Our standards are based on the values of Integrity, Loyalty, Honestly, Fairness and Excellence.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="background-primary">
-		<div class="shell">
-			<div class="grid centered">
-				<div class="grid__item centered">
-					<div class="constrained">
-						<h2>Have a Project in Mind?</h2>
-						<p class="text-larger">Clients seeking to supplement their internal staff frequently partner with TELICS to better manage resources for significant capital projects, meet critical milestones, and control overhead expense.</p>
-						<a href="/services" class="btn flush">Let's Get Started</a>
+
+	{% block content %}
+
+		<section>
+			<div class="image-fill image-blur" style="background-image: url('/assets/images/pageimages/cat5.jpg');"></div>
+			<div class="shell">
+				<div class="grid centered color-light">
+					<div class="grid__item centered">
+						<div class="constrained">
+							<p class="text-larger"><b>TELICS is a full service utility design and support firm</b> providing a broad range of integrated services including Design, Right-of-Way and Permitting, Utility Coordination, Traffic Signal Cabling, Special Projects, Staffing and Emergency Response Services.</p>
+							<a href="/services" class="btn flush">Learn More</a>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		<section class="background-medium">
+			<div class="shell">
+				<div class="grid handheld-centered">
+					<div class="grid__item centered">
+						<h2>Experience You Can Trust</h2>
+					</div>
+					<div class="grid__item lap-and-up-one-half">
+						<p class="flush"><b>For over 30 years,</b> TELICS has provided services to Telecommunication and Utility Companies, other consultants, Municipalities and Departments of Transportation.  We have a proven track record of providing our services in a cost effective and timely manner.</p>
+					</div><div class="grid__item lap-and-up-one-half">
+						<p class="flush">Our team strives to conduct ourselves in a manner that reminds our clients and employees of a simpler time when a handshake was a contract. Our standards are based on the values of Integrity, Loyalty, Honestly, Fairness and Excellence.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="background-primary">
+			<div class="shell">
+				<div class="grid centered">
+					<div class="grid__item centered">
+						<div class="constrained">
+							<h2>Have a Project in Mind?</h2>
+							<p class="text-larger">Clients seeking to supplement their internal staff frequently partner with TELICS to better manage resources for significant capital projects, meet critical milestones, and control overhead expense.</p>
+							<a href="/contact" class="btn flush">Let's Get Started</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+	{% endblock %}
+	
 	<footer class="background-dark">
 		<div class="shell">
 			<div class="grid handheld-centered">
@@ -74,7 +79,7 @@
 					<h4>Contact Us</h4>
 					<p>Monday - Friday<br>9am - 5pm EST<br>(864) 420-0148<br><a href="#">hello@telics.com</a></p>
 				</div><div class="grid__item handheld-centered">
-					<small>&copy; 2015 Telics Communications | All Rights Reserved</small>
+					<small>&copy; {{ now|date('Y') }} {{ siteName }} | All Rights Reserved</small>
 				</div>
 			</div>
 		</div>

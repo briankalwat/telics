@@ -33,21 +33,21 @@
 		}
 	}
 
-	.image-blur {
-		-webkit-filter: blur(10px);
-	}
+	// .image-blur {
+	// 	-webkit-filter: blur(10px);
+	// }
 
-	.image-fixed {
-		min-width: 110%;
-		min-height: 110%;
-		@include fixed(top -50px bottom -50px left -50px right -50px);
-	}
+	// .image-fixed {
+	// 	min-width: 110%;
+	// 	min-height: 110%;
+	// 	@include fixed(top -50px bottom -50px left -50px right -50px);
+	// }
 
-	.background-cover {
-		position: relative;
-		background-position: center center;
-		background-size: cover !important;
-		background-repeat: no-repeat;
-	}
+	// .background-cover {
+	// 	position: relative;
+	// 	background-position: center center;
+	// 	background-size: cover !important;
+	// 	background-repeat: no-repeat;
+	// }
 
 }

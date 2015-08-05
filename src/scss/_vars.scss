@@ -3,14 +3,14 @@
      $COLORS
 
  ------------------------------------------------------------------------------ */
-$brand-color: 		#2B488E;
+$brand-color: 		#2B79AD;
 $primary-color:    	$brand-color;
-$secondary-color:  	darken($primary-color, 20);
+$secondary-color:  	darken($primary-color, 15);
 $tertiary-color:   	darken($secondary-color, 10);
 
 $cta-color: 		$primary-color;
 
-$dark-color: 		#1a1a1a!default;
+$dark-color: 		#202020!default;
 $medium-color: 		#eee!default;
 $light-color: 		white!default;
 

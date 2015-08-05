@@ -3,7 +3,7 @@
 	@include headings(1,6) {
   	font-family: $base-heading-font;
   	color: $dark-color;
-  	margin-bottom: $base-spacing-unit;
+  	margin-bottom: $base-spacing-unit/2;
     letter-spacing: -1px;
 
 		.background-primary &, 
@@ -26,7 +26,6 @@
 	h1 {
 		font-size: $h1;
 		line-height: $h1-height;
-    	margin-bottom: $base-spacing-unit;
 	}
 
 	h2 {
@@ -37,7 +36,7 @@
 	h3 {
 		font-size: $h3;
 		line-height: $h3-height;
-		color: $medium-color;
+		color: darken($medium-color, 30);
 
 		.background-medium & {
 			color: darken($medium-color, 30);
@@ -48,7 +47,6 @@
 		font-size: $h4;
 		line-height: $h4-height;
 	    letter-spacing: 0px;
-	    margin-bottom: $base-spacing-unit/1.5;
 
 	    @include media-query(handheld) {
 			margin-bottom: $base-spacing-unit/3;

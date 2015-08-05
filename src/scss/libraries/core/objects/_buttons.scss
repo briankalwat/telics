@@ -11,7 +11,7 @@
 		padding: ($button-size*1.4 - 2) $button-size*3 ($button-size*1.4 + 2);
 		background-color: $cta-color;
 		color: $light-color;
-		@include radius($button-size*3);
+		@include radius($border-size);
 
 		@include media-query(handheld) {
 			font-size: $button-size;
