@@ -1,1 +1,1 @@
-# Telics.com
+# TELICS
