@@ -4,11 +4,9 @@
 	<section>
 		<div class="shell">
 			<div class="grid">
-				<div class="grid__item lap-and-up-three-quarters">
-					<h1>{{ entry.title }}</h1>
+				<div class="grid__item">
+					<h1>{% if entry.pageIcon %}<i class="fa {{ entry.pageIcon.class }}"></i> {% endif %}{{ entry.title }}</h1>
 					{{ entry.body }}
-				</div><div class="grid__item lap-and-up-one-quarter">
-					
 				</div>
 			</div>
 		</div>

@@ -21,6 +21,12 @@ nav {
 				margin-bottom: 0px;
 			}
 
+			&:last-child {
+				a {
+					border-right: 1px solid rgba(0,0,0,.1);
+				}
+			}
+
 			&:hover {
 				a {
 					background-color: $primary-color;

@@ -65,4 +65,10 @@
 			}
 		}
 	}
+
+	.btn-small {
+		@extend .btn;
+		font-size: $button-size*.9;
+		padding: ($button-size*1.2 - 1) $button-size*1.5 ($button-size*1.2 + 1);
+	}
 }

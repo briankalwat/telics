@@ -2,6 +2,18 @@
     Text 
 */
 
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
 .constrained {
     max-width: $copy-max-width;
     margin: auto;

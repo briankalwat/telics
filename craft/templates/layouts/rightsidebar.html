@@ -1,0 +1,25 @@
+{% extends "_layout" %}
+
+{% block content %}
+	<section>
+		<div class="shell">
+			<div class="grid">
+				<div class="grid__item">
+					<h1>{% if entry.pageIcon %}<i class="fa {{ entry.pageIcon.class }}"></i> {% endif %}{{ entry.title }}</h1>
+				</div>
+				<div class="grid__item lap-and-up-two-thirds">
+					{{ entry.body }}
+					<a href="#" class="btn">Submit a Project Inquiry</a>
+				</div><div class="grid__item lap-and-up-one-third">
+					{% if entry.list | length %}
+					    <ul class="bulleted">
+					        {% for row in entry.list %}
+					            <li>{{ row.description }}</li>
+					        {% endfor %}
+					    </ul>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

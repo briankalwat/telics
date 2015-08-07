@@ -1,11 +1,28 @@
 .logo {
 	position: relative;
 	top: 15px;
-	left: -5px;
-	max-width: 140px;
-	width: 140px;
+	left: 1px;
+	max-width: 200px;
+	width: 200px;
 	height: 60px;
 	margin-bottom: 0;
+	
+	.mark-top, .mark-bottom {
+		position: absolute;
+		transform: translate(0px, 0px);
+		@include vendor(transition, all $global-duration*2 $global-function);
+	}
+
+	&:hover {
+
+		.mark-top {
+			transform: translate(5px, -5px);
+		}
+
+		.mark-bottom {
+			transform: translate(-5px, 5px);
+		}
+	}
 }
 
 html {
