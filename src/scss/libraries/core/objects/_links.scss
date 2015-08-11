@@ -6,55 +6,18 @@
         font-size: $font-size;
         line-height: $line-height;
         margin-bottom: $base-spacing-unit/3;
-        color: $dark-color;
+        color: $cta-color;
         text-decoration: underline;
         cursor: pointer;
         letter-spacing: -.25px;
         @include vendor(transition, all $global-duration $global-function);
     
         &:hover {
-            color: $cta-color;
+            color: darken($cta-color, 10);
         }
 
-        .background-primary &,
-        .background-secondary & {
-            color: $light-color;
-
-            &:hover {
-                color: $light-color;
-            }
-        }
-
-        .background-tertiary & {
-            color: $cta-color;
-
-            &:hover {
-                color: $cta-color;
-            }
-        }
-
-        .background-light & {
-            color: $primary-color;
-
-            &:hover {
-                color: darken($primary-color, 10);
-            }
-        }
-
-        .background-medium & {
-            color: $light-color;
-
-            &:hover {
-                color: $light-color;
-            }
-        }
-
-        .background-dark & {
-            color: $light-color;
-
-            &:hover {
-                color: $cta-color;
-            }
+        &:focus{
+            outline:0; /*removes the dotted border*/
         }
     }
 
@@ -78,93 +41,19 @@
         &:hover {
             &:after {
                 right: -8px;
-                border-color: darken($cta-color, 20);
-            }
-        }
-
-        &.reverse {
-           
-
-            &:after {
-                
-            }
-
-            &:hover {
-                &:after {
-                    left: -8px;
-                }
-            }
-        }
-        
-        .background-primary &,
-        .background-secondary &,
-        .background-tertiary & {
-            color: $light-color;
-
-            &:after {
-                border-color: $light-color;
-            }
-
-            &:hover {
-                color: $light-color;
-
-                &:after {
-                    border-color: $light-color;
-                }
-            }
-        }
-
-        .background-light & {
-            color: $dark-color;
-
-            &:after {
-                border-color: $dark-color;
-            }
-
-            &:hover {
-                color: $dark-color;
-
-                &:after {
-                    border-color: $dark-color;
-                }
-            }
-        }
-
-        .background-medium & {
-            color: darken($medium-color, 30);
-
-            &:after {
-                border-color: darken($medium-color, 30);
-            }
-
-            &:hover {
-                color: darken($medium-color, 30);
-
-                &:after {
-                    border-color: darken($medium-color, 30);
-                }
-            }
-        }
-
-        .background-dark & {
-            color: $light-color;
-
-            &:after {
-                border-color: $light-color;
-            }
-
-            &:hover {
-                color: $light-color;
-
-                &:after {
-                    border-color: $light-color;
-                }
+                border-color: darken($cta-color, 10);
             }
         }
     }
 
-    .link--invisible {
-        text-decoration: none;
+    .link-arrow--reverse {
+        @extend .link-arrow;
+        text-indent: 15px;
+
+        &:after {
+            left: 5px;
+            right: auto;
+            @include rotate(-45deg);
+        }
     }
-    
 }

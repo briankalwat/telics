@@ -3,16 +3,17 @@
      $COLORS
 
  ------------------------------------------------------------------------------ */
-$brand-color: 		#2B79AD;
+$brand-color: 		#228BBF;
 $primary-color:    	$brand-color;
-$secondary-color:  	darken($primary-color, 15);
-$tertiary-color:   	darken($secondary-color, 10);
+$secondary-color:  	#EAB808;
+$tertiary-color:   	#2D3742;
 
 $cta-color: 		$primary-color;
 
 $dark-color: 		#202020!default;
 $medium-color: 		#eee!default;
 $light-color: 		white!default;
+$error-color: 		#B43F37!default;
 
 $facebook:	    	#42599e!default;
 $twitter:	   	    #55acee!default;
@@ -83,8 +84,8 @@ $button-size: 		20px!default;
 
 ------------------------------------------------------------------------------ */
 
-$global-duration:      .1s!default;
-$global-function:      ease-in-out!default;
+$global-duration:      .2s!default;
+$global-function:      cubic-bezier(.57,.18,.02,.97)!default;
 $global-delay:         .2s!default;
 
 

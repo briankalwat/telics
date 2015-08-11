@@ -10,6 +10,10 @@
 			bottom: 0px;
 			left: 0px;
 		}
+
+		h1, h2, h3, h4, h5, h6, p, p a, li, small {
+			color: $light-color;
+		}
 	}
 
 	.overlay__item {
@@ -20,7 +24,7 @@
 	.overlay--dark {
 		@extend .overlay;
 		&:before {
-			background-color: rgba(0,0,0,.6);
+			background-color: rgba(0,0,0,.4);
 		}
 	}
 

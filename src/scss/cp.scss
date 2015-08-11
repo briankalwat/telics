@@ -1,28 +1,28 @@
 @import "vars";
 
-// #header {
-// 	background-color: $tertiary-color;
-// }
+#header {
+	background-color: $tertiary-color;
+}
 
-// h1, 
-// a, 
-// #crumbs li a, 
-// .sidebar nav li a:not(.sel):hover,
-// ul.icons li a:hover {
-// 	color: $primary-color;
-// }
+h1, 
+a, 
+#crumbs li a, 
+.sidebar nav li a:not(.sel):hover,
+ul.icons li a:hover {
+	color: $primary-color;
+}
 
-// #crumbs li a:hover {
-// 	color: $secondary-color;
-// }
+#crumbs li a:hover {
+	color: $secondary-color;
+}
 
-// .btn.submit {
-// 	background-color: $primary-color;
-// }
+.btn.submit {
+	background-color: $primary-color;
+}
 
-// .btn.submit:not(.disabled):hover, 
-// .btn.submit:not(.disabled).hover, 
-// .btn.submit:not(.disabled):active, 
-// .btn.submit:not(.disabled).active {
-// 	background-color: $secondary-color;
-// }
+.btn.submit:not(.disabled):hover, 
+.btn.submit:not(.disabled).hover, 
+.btn.submit:not(.disabled):active, 
+.btn.submit:not(.disabled).active {
+	background-color: $secondary-color;
+}

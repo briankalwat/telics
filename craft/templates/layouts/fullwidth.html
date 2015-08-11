@@ -1,11 +1,29 @@
 {% extends "_layout" %}
 
 {% block content %}
-	<section>
-		<div class="shell">
-			<div class="grid">
-				<div class="grid__item">
-					<h1>{% if entry.pageIcon %}<i class="fa {{ entry.pageIcon.class }}"></i> {% endif %}{{ entry.title }}</h1>
+	
+	{% set assets = entry.pageImage %}
+
+	{% if assets | length %}
+
+		{% embed "_embeds/hero.twig" %}
+
+			{% block image %}{% for asset in assets %}{{ asset.url }}{% endfor %}{% endblock %}
+
+			{% block title %}{{ entry.title }}{% endblock %}
+
+		{% endembed %}
+		<section>
+			<div class="shell">
+				<div class="grid">
+					<div class="grid__item">
+	{% else %}
+		<section>
+			<div class="shell">
+				<div class="grid">
+					<div class="grid__item">
+						<h1>{{ entry.title }}</h1>
+	{% endif %}
 					{{ entry.body }}
 				</div>
 			</div>

@@ -24,44 +24,39 @@
 			color: $light-color;
 		}
 
-		.background-primary &,
-		.background-secondary &,
-		.background-tertiary & {
-			background-color: $light-color;
-			border-color: $light-color;
-
-			&:hover {
-				color: $dark-color;
-			}
-		}
-
-		.background-primary & {
-			color: $primary-color;
-		}
-
-		.background-secondary & {
-			color: $secondary-color;
-		}
-
-		.background-tertiary & {
-			color: $tertiary-color;
-		}
-
-		.background-medium & {
+		&.btn-primary {
+			background-color: $primary-color;
+			border-color: $primary-color;
 			color: $light-color;
-			border-color: $light-color;
 
 			&:hover {
-				color: $cta-color;
-				background: $light-color;
+				background-color: lighten($primary-color, 5);
+				border-color: lighten($primary-color, 5);
+				color: $light-color;
 			}
 		}
 
-		.background-dark & {
+		&.btn-secondary {
+			background-color: $secondary-color;
+			border-color: $secondary-color;
+			color: $light-color;
 
 			&:hover {
+				background-color: lighten($secondary-color, 5);
+				border-color: lighten($secondary-color, 5);
 				color: $light-color;
-				background: lighten($cta-color, 3);
+			}
+		}
+
+		&.btn-tertiary {
+			background-color: $tertiary-color;
+			border-color: $tertiary-color;
+			color: $light-color;
+
+			&:hover {
+				background-color: lighten($tertiary-color, 5);
+				border-color: lighten($tertiary-color, 5);
+				color: $light-color;
 			}
 		}
 	}

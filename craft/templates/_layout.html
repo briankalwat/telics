@@ -4,6 +4,8 @@
 	<meta charset="utf-8" />
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<link rel="home" href="{{ siteUrl }}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//use.typekit.net/sbc2gns.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -11,14 +13,26 @@
 </head>
 
 <body>
+	<div class="nav">
+		<nav>
+			<ul class="flush">
+				{% set pages = craft.entries.section('pages').level('1') %}
+				{% nav page in pages %}<li>
+					{{ page.getLink() }}
+				</li>{% endnav %}
+			</ul>
+		</nav>
+		<i class="nav-close"></i>
+	</div>
 	<header>
-		<div class="shell hard--ends">
-			<a href="/" class="float--left">{% embed "_embeds/logo-wide.twig" %}{% endembed %}</a>
+		<div class="shell hard">
+			<a href="/" class="logo float--left">{% embed "_embeds/logo-wide.twig" %}{% endembed %}</a>
 			<nav class="flush">
 				<ul>
-					{% for entry in craft.entries.section('pages').level(1) %}<li>
+					<li><a href="#" class="nav-trigger caps">Menu <i class="fa fa-fw fa-bars"></i></a></li>
+					{# {% for entry in craft.entries.section('pages').level(1) %}<li>
 							<a href="{{ entry.url }}">{{ entry.title }}</a>
-						</li>{% endfor %}
+						</li>{% endfor %} #}
 				</ul>
 			</nav>
 		</div>
@@ -53,6 +67,7 @@
 				</div>
 			</div>
 		</section>
+
 		<section class="background-primary">
 			<div class="shell">
 				<div class="grid centered">
@@ -86,5 +101,16 @@
 			</div>
 		</div>
 	</footer>
+
+	<script>
+		$('.nav-trigger, .nav-close').on('click', function() {
+			$('html').toggleClass('nav-open');
+			return false;
+		});
+
+		$('.nav li').on('click', function() {
+			$(this).toggleClass('open');
+		});
+	</script>
 </body>
 </html>

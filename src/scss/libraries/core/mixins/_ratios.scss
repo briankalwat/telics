@@ -56,7 +56,7 @@
 
     .#{$namespace}ratio--landscape         { @include fixed-ratio(2, 1, ratio__item ); }
 
-    .#{$namespace}ratio--hero         { @include fixed-ratio(2.25, 1, ratio__item ); }
+    .#{$namespace}ratio--hero         { @include fixed-ratio(5, 1, ratio__item ); }
 
     .#{$namespace}ratio--square         { @include fixed-ratio(1, 1, ratio__item ); }
 
