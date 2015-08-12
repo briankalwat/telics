@@ -2,10 +2,11 @@
 
 {% block content %}
 
-	{% for block in entry.pageContent %}
+	{% for block in entry.pageContent %}{#
 
-		{# SECTION - AD UNIT #}
-		{% if block.type == 'adUnit' %}
+		SECTION - AD UNIT 
+
+		#}{% if block.type == 'adUnit' %}
 			{% set image = block.adUnitBGImage.first %}
 			<section class="{% if image %}image-fill overlay{% endif %}{{ block.adUnitBGColor }}">
 				{% if image %}
@@ -23,27 +24,29 @@
 					</div>
 				</div>
 			</section>
-		{% endif %}
+		{% endif %}{#
 
-		{# CUSTOM SECTIONS #}
-		{% if block.type == 'customSection' %}
+		CUSTOM SECTIONS
+
+		#}{% if block.type == 'customSection' %}
 			<section class="{{ block.customSectionBGColor }}">
 				<div class="shell">
 					<div class="grid handheld-centered">
-		{% endif %}
+		{% endif %}{#
 
-		{% if block.type == 'customSectionEnd' %}
+		#}{% if block.type == 'customSectionEnd' %}
 					</div>
 				</div>
 			</section>
-		{% endif %}
+		{% endif %}{#
 
-		{# ELEMENT - BODY #}
-		{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.bodyElementWidth }} {{ block.bodyElementAlignment }}">
+		ELEMENTS
+
+		#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.bodyElementWidth }} {{ block.bodyElementAlignment }}">
 				{{ block.bodyElementContent }}
-		</div>{% endif %}
+		</div>{% endif %}{#
 
-	{% endfor %}
+	#}{% endfor %}
 
 	{# <section class="image-fill">
 		<div class="image__item image-blur" style="background-image: url('/assets/images/pageimages/cat5.jpg');"></div>
