@@ -1,0 +1,9 @@
+<section class="breadcrumbs background-primary">
+	<div class="shell hard--ends">
+		{% if entry.level > 0 %}
+		    <ul class="crumbs">
+		    	<li><a href="{{ siteUrl }}"><i class="fa fa-fw fa-home"></i></a></li>{% for crumb in entry.getAncestors() %}<li>{{ crumb.getLink() }}</li>{% endfor %}<li><a href="{{ entry.url }}" class="current">{{ entry.title }}</a></li>
+		    </ul>
+		{% endif %}
+	</div>
+</section>

@@ -1,33 +1,48 @@
-{#
- # Homepage template
- # ---------------
- #
- # When this template gets loaded, it will be because someone has accessed
- # http://yoursite.com/ (without any URI). Craft checks to see if you have
- # a Single section set to be the Homepage (as you do, by default), and
- # loads the section’s Template (this file). A special ‘entry’ variable
- # will already be set for you, assigned to the Homepage entry.
- #
- # It's worth noting that even if you didn't have a Homepage Single section,
- # as long as this template remains at craft/templates/index.html, it
- # would still be the one to get loaded when accessing http://yoursite.com/,
- # albeit without an ‘entry’ variable already set for you.
- #
- # See this page for more details on how Craft routes requests:
- # http://buildwithcraft.com/docs/routing
- #}
-
-{% extends "_layout" %}
+{% extends "_master" %}
 
 {% block content %}
-	<h1>{{ entry.title }}</h1>
 
-	{{ entry.body }}
+	<section class="image-fill">
+		<div class="image__item image-blur" style="background-image: url('/assets/images/pageimages/cat5.jpg');"></div>
+		<div class="shell">
+			<div class="grid centered color-light">
+				<div class="grid__item centered">
+					<div class="constrained">
+						<p class="text-larger"><b>TELICS is a full service utility design and support firm</b> providing a broad range of integrated services including Design, Right-of-Way and Permitting, Utility Coordination, Traffic Signal Cabling, Special Projects, Staffing and Emergency Response Services.</p>
+						<a href="/services" class="btn flush">Learn More</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-	<h2>Recent News</h2>
-	<ul>
-		{% for entry in craft.entries.section('news').limit(5).find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-		{% endfor %}
-	</ul>
+	<section class="background-medium">
+		<div class="shell">
+			<div class="grid handheld-centered">
+				<div class="grid__item centered">
+					<h2>Experience You Can Trust</h2>
+				</div>
+				<div class="grid__item lap-and-up-one-half">
+					<p class="flush"><b>For over 30 years,</b> TELICS has provided services to Telecommunication and Utility Companies, other consultants, Municipalities and Departments of Transportation.  We have a proven track record of providing our services in a cost effective and timely manner.</p>
+				</div><div class="grid__item lap-and-up-one-half">
+					<p class="flush">Our team strives to conduct ourselves in a manner that reminds our clients and employees of a simpler time when a handshake was a contract. Our standards are based on the values of Integrity, Loyalty, Honestly, Fairness and Excellence.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="background-primary">
+		<div class="shell">
+			<div class="grid centered">
+				<div class="grid__item centered">
+					<div class="constrained">
+						<h2>Have a Project in Mind?</h2>
+						<p class="text-larger">Clients seeking to supplement their internal staff frequently partner with TELICS to better manage resources for significant capital projects, meet critical milestones, and control overhead expense.</p>
+						<a href="/contact" class="btn flush">Let's Get Started</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 {% endblock %}

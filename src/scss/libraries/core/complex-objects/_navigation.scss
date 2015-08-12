@@ -17,15 +17,27 @@ nav {
 				font-size: $base-font-size*1.3;
 				font-weight: 600;
 				padding: $button-size*1.5 + 1 $button-size*1.5 $button-size*1.5 - 1;
+				border-left: 1px solid rgba(0,0,0,.1);
 				text-decoration: none;
 				margin-bottom: 0px;
 				color: $dark-color;
 			}
 
+			&:last-child {
+				a {
+					border-right: 1px solid rgba(0,0,0,.1);
+				}
+			}
+
 			&:hover {
 				a {
-					background-color: $cta-color;
-					color: $light-color;
+					background-color: $medium-color;
+					color: $dark-color;
+					border-color: $medium-color;
+				}
+
+				& + li {
+					border-color: $medium-color;
 				}
 			}
 		}
@@ -42,7 +54,7 @@ nav {
 	width: 70%;
 	padding: $base-spacing-unit/3*2;
 	background-color: rgba($dark-color, .98);
-	z-index: 5;
+	z-index: 16;
 
 	@include media-query(handheld) {
 		width: 100%;
@@ -68,7 +80,6 @@ nav {
 
 	&, &:after {
 		@include vendor(transition, all $global-duration*3 $global-function);
-		box-shadow: 0 0 5px rgba(0,0,0,.2);
 
 		@include media-query(handheld) {
 			@include vendor(transition, all $global-duration $global-function);

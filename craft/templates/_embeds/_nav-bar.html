@@ -1,0 +1,13 @@
+<header>
+	<div class="shell hard--ends hard--right">
+		<a href="/" class="logo float--left">{% include "_embeds/_logo-wide" %}</a>
+		<nav class="flush">
+			<ul>
+				{% if currentUser %}<li><a href="/dashboard"><i class="fa fa-fw fa-tachometer"></i> Dashboard</a></li><li><a href="{{ logoutUrl }}"><i class="fa fa-fw fa-sign-out"></i> Sign Out</a></li>{% else %}<li><a href="{{ loginUrl }}"><i class="fa fa-fw fa-sign-in"></i> Sign In</a></li>{% endif %}<li><a href="#" class="nav-trigger"><i class="fa fa-fw fa-bars"></i> Menu</a></li>
+				{# {% for entry in craft.entries.section('pages').level(1) %}<li>
+						<a href="{{ entry.url }}">{{ entry.title }}</a>
+					</li>{% endfor %} #}
+			</ul>
+		</nav>
+	</div>
+</header>

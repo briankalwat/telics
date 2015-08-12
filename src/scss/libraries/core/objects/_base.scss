@@ -19,10 +19,10 @@ body {
 
 
 *::selection {
-  background: lighten($medium-color, 30); /* WebKit/Blink Browsers */
+  background: lighten($primary-color, 30); /* WebKit/Blink Browsers */
 }
 *::-moz-selection {
-  background: lighten($medium-color, 30); /* Gecko Browsers */
+  background: lighten($primary-color, 30); /* Gecko Browsers */
 }
 
 
@@ -38,12 +38,14 @@ body {
     position: relative;
     max-width: $max-width;
     margin: 0 auto;
-    padding: $base-spacing-unit*2 $base-spacing-unit*1.5;
-    box-shadow: 0 0 25px rgba(0,0,0,.1);
-    overflow: hidden;
+    padding: $base-spacing-unit*2 $base-spacing-unit*1.5 $base-spacing-unit;
+
+    @include media-query(portable) {
+        padding: $base-spacing-unit/1.5;
+    }
 
     @include media-query(handheld) {
-        padding: $base-spacing-unit*1.25 $base-spacing-unit/2;
+        padding: $base-spacing-unit*.8 $base-spacing-unit/3;
     }
 }
 

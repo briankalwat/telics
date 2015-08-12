@@ -6,7 +6,7 @@ body {
 	& > header {
 		position: fixed;
 		top: 0px;
-		z-index: 2;
+		z-index: 15;
 		background-color: $light-color;
 		box-shadow: 0 0 8px rgba(0,0,0,.2);
 
@@ -20,10 +20,12 @@ body {
 	}
 }
 
+
+// Logo
 .logo {
 	position: relative;
 	top: 15px;
-	left: 20px;
+	left: -12px;
 	max-width: 200px;
 	width: 200px;
 	height: 60px;
@@ -49,6 +51,55 @@ body {
 	@include media-query(handheld) {
 		transform: scale(.9);
 		top: 16px;
-		left: 0px;
+		left: -20px;
+	}
+}
+
+// Breadcrumbs
+.crumbs {
+	margin-bottom: 0px;
+
+	li {
+		display: inline-block;
+		margin-bottom: 0px;
+
+		a {
+			display: inline-block;
+			margin: 0px;
+			padding: $base-spacing-unit/4 $base-spacing-unit/3;
+			text-decoration: none;
+			font-size: $font-size*.8;
+			font-weight: 700;
+			border-left: 1px solid rgba(0, 0, 0, .1);
+			color: rgba(0, 0, 0, .4);
+
+			&:hover {
+				background-color: rgba(0, 0, 0, .1);
+				color: rgba(0, 0, 0, .6);
+			}
+
+			&.current {
+				background-color: $dark-color;
+				color: $light-color;
+			}
+		}
+
+		&:last-child {
+			a {
+				border-right: 1px solid rgba(0, 0, 0, .1);
+			}
+		}
+	}
+}
+
+// Cards
+.card {
+	padding: $base-spacing-unit/2;
+	border: 1px solid $medium-color;
+	box-shadow: 0 2px 0 $medium-color;
+	@include radius($border-radius*2);
+
+	*:last-child {
+		margin-bottom: 0px;
 	}
 }

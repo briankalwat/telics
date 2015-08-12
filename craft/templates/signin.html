@@ -1,0 +1,38 @@
+{% extends "_master" %}
+
+{% block content %}
+
+<section>
+    <div class="shell">
+        <div class="grid centered">
+            <div class="grid__item lap-and-up-one-half left flush">
+                <form method="post" accept-charset="UTF-8">
+                    {{ getCsrfInput() }}
+                    <input type="hidden" name="action" value="users/login">
+
+                    <h2 class="flush"><label for="loginName">Username or Email</label></h2>
+                    <input id="loginName" type="text" name="loginName"
+                        value="{{ craft.session.rememberedUsername }}">
+
+                    <h2 class="flush"><label for="password">Password</label></h2>
+                    <input id="password" type="password" name="password">
+
+                    <label>
+                        <input type="checkbox" name="rememberMe" value="1">
+                        Remember me
+                    </label>
+
+                    <input type="submit" value="Sign In" class="btn-small flush--bottom">
+
+                    <p><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
+
+                    {% if errorMessage is defined %}
+                        <p>{{ errorMessage }}</p>
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

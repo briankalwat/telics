@@ -1,32 +1,29 @@
-{% extends "_layout" %}
+{% extends "_master" %}
+
+{% set title = entry.title %}
 
 {% block content %}
-	
-	{% set assets = entry.pageImage %}
 
-	{% if assets | length %}
+	{% include "_embeds/_breadcrumbs" %}
 
-		{% embed "_embeds/hero.twig" %}
-
-			{% block image %}{% for asset in assets %}{{ asset.url }}{% endfor %}{% endblock %}
-
-			{% block title %}{{ entry.title }}{% endblock %}
-
-		{% endembed %}
-		<section>
-			<div class="shell">
-				<div class="grid">
-					<div class="grid__item">
-	{% else %}
-		<section>
-			<div class="shell">
-				<div class="grid">
-					<div class="grid__item">
-						<h1>{{ entry.title }}</h1>
-	{% endif %}
+	<section>
+		<div class="shell">
+			<div class="grid">
+				<div class="grid__item">
+					<h1>{{ entry.title }}</h1>
 					{{ entry.body }}
 				</div>
 			</div>
+			<div class="grid grid--condensed">
+				{% for entry in craft.entries.section('pages').descendantOf( entry.id ) %}<div class="grid__item portable-one-half anchored-one-half">
+					<div class="card">
+						<h2>{{ entry.title }}</h2>
+						<p>Lorem ipsum Velit enim minim qui deserunt aute anim eu in nulla sint est sunt aliqua adipisicing minim incididunt laborum.</p>
+						<a href="{{ entry.url }}" class="link-arrow">Learn More</a>
+					</div>
+				</div>{% endfor %}
+			</div>
 		</div>
 	</section>
+
 {% endblock %}

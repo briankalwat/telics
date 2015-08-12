@@ -1,0 +1,10 @@
+<script>
+	$('.nav-trigger, .nav-close').on('click', function() {
+		$('html').toggleClass('nav-open');
+		return false;
+	});
+
+	$('.nav li').on('click', function() {
+		$(this).toggleClass('open');
+	});
+</script>

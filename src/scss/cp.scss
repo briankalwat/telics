@@ -1,28 +1,37 @@
 @import "vars";
 
-#header {
-	background-color: $tertiary-color;
+.muted {
+	color: darken($medium-color, 20);
+
+	.sel & {
+		color: inherit;
+		opacity: .4;
+	}
 }
 
-h1, 
-a, 
-#crumbs li a, 
-.sidebar nav li a:not(.sel):hover,
-ul.icons li a:hover {
-	color: $primary-color;
-}
+// #header {
+// 	background-color: $tertiary-color;
+// }
 
-#crumbs li a:hover {
-	color: $secondary-color;
-}
+// h1, 
+// a, 
+// #crumbs li a, 
+// .sidebar nav li a:not(.sel):hover,
+// ul.icons li a:hover {
+// 	color: $primary-color;
+// }
 
-.btn.submit {
-	background-color: $primary-color;
-}
+// #crumbs li a:hover {
+// 	color: $secondary-color;
+// }
 
-.btn.submit:not(.disabled):hover, 
-.btn.submit:not(.disabled).hover, 
-.btn.submit:not(.disabled):active, 
-.btn.submit:not(.disabled).active {
-	background-color: $secondary-color;
-}
+// .btn.submit {
+// 	background-color: $primary-color;
+// }
+
+// .btn.submit:not(.disabled):hover, 
+// .btn.submit:not(.disabled).hover, 
+// .btn.submit:not(.disabled):active, 
+// .btn.submit:not(.disabled).active {
+// 	background-color: $secondary-color;
+// }

@@ -1,41 +1,24 @@
-{% extends "_layout" %}
+{% extends "_master" %}
+
+{% set title = entry.title %}
 
 {% block content %}
 
-{% set assets = entry.pageImage %}
+	{% include "_embeds/_breadcrumbs" %}
 
-	{% if assets | length %}
-
-		{% embed "_embeds/hero.twig" %}
-
-			{% block image %}{% for asset in assets %}{{ asset.url }}{% endfor %}{% endblock %}
-
-			{% block title %}{{ entry.title }}{% endblock %}
-
-		{% endembed %}
-		<section>
-			<div class="shell">
-				<div class="grid">
-	{% else %}
-		<section>
-			<div class="shell">
-				<div class="grid">
-					<div class="grid__item">
-						<h1>{{ entry.title }}</h1>
-					</div>
-	{% endif %}
+	<section>
+		<div class="shell">
+			<div class="grid">
+				<div class="grid__item">
+					<h1>{{ entry.title }}</h1>
+				</div>
 				<div class="grid__item lap-and-up-two-thirds">
 					{{ entry.body }}
 				</div><div class="grid__item lap-and-up-one-third">
-					{% if entry.list | length %}
-					    <ul class="bulleted">
-					        {% for row in entry.list %}
-					            <li>{{ row.description }}</li>
-					        {% endfor %}
-					    </ul>
-					{% endif %}
+					{{ entry.sidebar }}
 				</div>
 			</div>
 		</div>
 	</section>
+
 {% endblock %}

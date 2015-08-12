@@ -9,6 +9,8 @@
 		text-decoration: none;
 		border: $button-size/6 solid $cta-color;
 		padding: ($button-size*1.4 - 2) $button-size*3 ($button-size*1.4 + 2);
+		margin-bottom: $base-spacing-unit/2;
+		margin-right: $base-spacing-unit/3;
 		background-color: $cta-color;
 		color: $light-color;
 		@include radius($border-size);

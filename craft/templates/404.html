@@ -16,11 +16,15 @@
  # http://buildwithcraft.com/docs/routing
  #}
 
-{% extends "_layout" %}
+{% extends "_master" %}
 {% set title = "404" %}
 
 {% block content %}
-	<h1>Page not found</h1>
-
-	<p>What’s worse, a hilarious 404 page can’t be found either.</p>
+	<section>
+		<div class="shell centered">
+			<h1 class="text-huge">404</h1>
+			<h2>We can't find the page you're looking for.</h2>
+			<p>If you believe you've reached this in error, contact us at <a href="mailto:webmaster@telics.com">webmaster@telics.com</a>.</p>
+		</div>
+	</section>
 {% endblock %}

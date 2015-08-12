@@ -5,7 +5,7 @@
         font-family: $base-copy-font;
         font-size: $font-size;
         line-height: $line-height;
-        margin-bottom: $base-spacing-unit/3;
+        margin-bottom: $base-spacing-unit/2;
         color: $cta-color;
         text-decoration: underline;
         cursor: pointer;
@@ -13,7 +13,7 @@
         @include vendor(transition, all $global-duration $global-function);
     
         &:hover {
-            color: darken($cta-color, 10);
+            color: lighten($cta-color, 10);
         }
 
         &:focus{
@@ -41,7 +41,7 @@
         &:hover {
             &:after {
                 right: -8px;
-                border-color: darken($cta-color, 10);
+                border-color: lighten($cta-color, 10);
             }
         }
     }

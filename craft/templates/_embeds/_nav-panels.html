@@ -1,0 +1,11 @@
+<div class="nav">
+	<nav>
+		<ul class="flush">
+			{% set pages = craft.entries.section('pages').level('1') %}
+			{% nav page in pages %}<li>
+				{{ page.getLink() }}
+			</li>{% endnav %}
+		</ul>
+	</nav>
+	<i class="nav-close"></i>
+</div>

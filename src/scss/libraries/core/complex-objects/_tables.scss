@@ -1,0 +1,14 @@
+@if $use-tables == true {
+	table {
+		border: 1px solid $medium-color;
+		th, td, td a {
+			font-size: $font-size*.9;
+		}
+
+		th, td {
+			padding: $base-spacing-unit/4;
+			border-right: 1px solid darken($medium-color, 5);
+			border-bottom: 1px solid darken($medium-color, 5);
+		}
+	}
+}
