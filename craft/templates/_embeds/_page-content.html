@@ -1,19 +1,25 @@
-{% for block in entry.pageContent %}{#
+{% for block in entry.pageContent %}{% if block.sortOrder == 1 and entry.pageTitle == 1 %}<section class="{{ block.backgroundColor }}">
+	<div class="shell hard--bottom">
+		<div class="grid">
+			<div class="grid__item"><h1 class="flush">{{ entry.title }}</h1></div>
+		</div>
+	</div>
+</section>{% endif %}{#
 
 	SECTION - AD UNIT 
 
 	#}{% if block.type == 'adUnit' %}
-		{% set image = block.adUnitBGImage.first %}
-		<section class="{% if image %}image-fill overlay{% endif %}{{ block.adUnitBGColor }}">
+		{% set image = block.backgroundImage.first %}
+		<section class="{% if image %}image-fill overlay{% endif %}{{ block.backgroundColor }}">
 			{% if image %}
 				<div class="image__item image-blur" style="background-image: url('{{ image.url }}');"></div>
 			{% endif %}
-			<div class="shell">
-				<div class="grid {% if block.adUnitAlignment == 'left' %}left {% elseif block.adUnitAlignment == 'right' %}right {% else %}centered {% endif %}">
-					<div class="grid__item {% if block.adUnitAlignment != 'center' %}lap-and-up-two-thirds {% else %}lap-and-up-three-quarters {% endif %}">
-						{% if block.adUnitHeading %}<h2>{{ block.adUnitHeading }}</h2>{% endif %}
-						{{ block.adUnitBody }}
-						{% for link in block.adUnitLinks %}
+			<div class="shell {% if block.sortOrder == 1 and entry.pageTitle == 1 %}soft-half-top{% endif %}">
+				<div class="grid {% if block.alignment == 'left' %}left {% elseif block.alignment == 'right' %}right {% else %}centered {% endif %}">
+					<div class="grid__item {% if block.alignment != 'center' %}lap-and-up-two-thirds {% else %}lap-and-up-three-quarters {% endif %}">
+						{% if block.heading %}<h2>{{ block.heading }}</h2>{% endif %}
+						{{ block.body }}
+						{% for link in block.links %}
 							<a href="{{ link.url }}" class="btn">{{ link.text }}</a>
 						{% endfor %}
 					</div>
@@ -25,8 +31,8 @@
 	CUSTOM SECTIONS
 
 	#}{% if block.type == 'customSection' %}
-		<section class="{{ block.customSectionBGColor }}">
-			<div class="shell">
+		<section class="{{ block.backgroundColor }}">
+			<div class="shell {% if block.sortOrder == 1 and entry.pageTitle == 1 %}soft-half-top{% endif %}">
 				<div class="grid handheld-centered">
 	{% endif %}{#
 
@@ -38,8 +44,8 @@
 
 	Body Element
 
-	#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.bodyElementWidth }} {{ block.bodyElementAlignment }}">
-			{{ block.bodyElementContent }}
+	#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.width }} {{ block.alignment }}">
+			{{ block.body }}
 	</div>{% endif %}{#
 
 	Channel Loop Element

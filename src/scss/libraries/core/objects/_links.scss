@@ -20,7 +20,7 @@
             outline:0; /*removes the dotted border*/
         }
 
-        .background-dark & {
+        .background-dark &:not(.btn) {
             color: $secondary-color;
 
             &:hover {

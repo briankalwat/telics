@@ -50,7 +50,7 @@ body {
     }
 
     @include media-query(handheld) {
-        padding: $base-spacing-unit*1.5 $base-spacing-unit/3 $base-spacing-unit;
+        padding: $base-spacing-unit $base-spacing-unit/3 $base-spacing-unit/2;
     }
 }
 

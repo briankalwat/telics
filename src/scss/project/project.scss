@@ -60,6 +60,7 @@ body {
 }
 
 // Breadcrumbs
+
 .crumbs {
 	margin-bottom: 0px;
 	margin-left: 0px;
@@ -94,14 +95,18 @@ body {
 				border-right: 2px solid rgba(0, 0, 0, .15);
 			}
 		}
+	}
 
-		@include media-query(handheld) {
+	@include media-query(handheld) {
+		li {
 			&:first-child {
 				a {
 					border-left: 0px;
 				}
 			}
 		}
+		
+		display: none;
 	}
 }
 
