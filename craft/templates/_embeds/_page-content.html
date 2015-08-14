@@ -1,0 +1,71 @@
+{% for block in entry.pageContent %}{#
+
+	SECTION - AD UNIT 
+
+	#}{% if block.type == 'adUnit' %}
+		{% set image = block.adUnitBGImage.first %}
+		<section class="{% if image %}image-fill overlay{% endif %}{{ block.adUnitBGColor }}">
+			{% if image %}
+				<div class="image__item image-blur" style="background-image: url('{{ image.url }}');"></div>
+			{% endif %}
+			<div class="shell">
+				<div class="grid {% if block.adUnitAlignment == 'left' %}left {% elseif block.adUnitAlignment == 'right' %}right {% else %}centered {% endif %}">
+					<div class="grid__item {% if block.adUnitAlignment != 'center' %}lap-and-up-two-thirds {% else %}lap-and-up-three-quarters {% endif %}">
+						{% if block.adUnitHeading %}<h2>{{ block.adUnitHeading }}</h2>{% endif %}
+						{{ block.adUnitBody }}
+						{% for link in block.adUnitLinks %}
+							<a href="{{ link.url }}" class="btn">{{ link.text }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endif %}{#
+
+	CUSTOM SECTIONS
+
+	#}{% if block.type == 'customSection' %}
+		<section class="{{ block.customSectionBGColor }}">
+			<div class="shell">
+				<div class="grid handheld-centered">
+	{% endif %}{#
+
+	#}{% if block.type == 'customSectionEnd' %}
+				</div>
+			</div>
+		</section>
+	{% endif %}{#
+
+	Body Element
+
+	#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.bodyElementWidth }} {{ block.bodyElementAlignment }}">
+			{{ block.bodyElementContent }}
+	</div>{% endif %}{#
+
+	Channel Loop Element
+
+	#}{% if block.type == 'dynamicLoopElement' %}
+		{% if block.enableCards == 1 %}</div><div class="grid grid--condensed">{% endif %}
+		{% if block.kind == 'channel' %}
+		{% for entry in craft.entries.section( block.channel ).limit(10) %}<div class="grid__item portable-one-half anchored-one-third">
+			{% if block.enableCards == 1 %}<div class="card">{% endif %}
+			<h3>{{ entry.title }}</h3>
+			<p>Lorem ipsum Ut occaecat nulla cillum fugiat incididunt minim magna in cupidatat.</p>
+			<a href="{{ entry.url }}" class="link-arrow">{{ block.ctaLabel }}</a>
+			{% if block.enableCards == 1 %}</div>{% endif %}
+		</div>{% endfor %}
+		{% else %}
+			{% for page in block.parentPage %}
+				{% for entry in craft.entries.descendantOf(page.id) %}<div class="grid__item portable-one-half anchored-one-third">
+					{% if block.enableCards == 1 %}<div class="card">{% endif %}
+						<h3>{{ entry.title }}</h3>
+						<p>Lorem ipsum Eiusmod nulla labore veniam officia anim aliqua ullamco dolor elit exercitation.</p>
+						<a href="{{ entry.url }}" class="link-arrow">{{ block.ctaLabel }}</a>
+					{% if block.enableCards == 1 %}</div>{% endif %}
+				</div>{% endfor %}
+			{% endfor %}
+		{% endif %}
+
+	{% endif %}{#
+
+#}{% endfor %}

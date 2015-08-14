@@ -16,7 +16,7 @@ nav {
 				font-family: $base-heading-font;
 				font-size: $base-font-size*1.3;
 				font-weight: 600;
-				padding: $button-size*1.5 + 1 $button-size*1.5 $button-size*1.5 - 1;
+				padding: $button-size*1.5 + 1 $button-size*1.35 $button-size*1.5 - 1;
 				border-left: 1px solid rgba(0,0,0,.1);
 				text-decoration: none;
 				margin-bottom: 0px;
@@ -40,128 +40,106 @@ nav {
 					border-color: $medium-color;
 				}
 			}
+
+			&.active {
+				a {
+					background-color: $primary-color;
+					color: $light-color;
+					border-color: $primary-color;
+				}
+
+				& + li {
+					border-color: $primary-color;
+				}
+			}
+
+			@include media-query(desk-wide) {
+				a {
+					padding-left: $button-size*1.5;
+					padding-right: $button-size*1.5;
+				}
+			}
+
+			@include media-query(handheld) {
+				a {
+					padding: $button-size + 1 $button-size $button-size - 1;
+				}
+
+				&:last-child {
+					a {
+						border-right: 0px;
+					}
+				}
+			}
 		}
 	}
 }
 
 // Nav Panels
-
-.nav {
+.mobile-nav {
 	position: fixed;
-	top: 0px;
-	right: -70%;
-	bottom: 0px;
-	width: 70%;
-	padding: $base-spacing-unit/3*2;
-	background-color: rgba($dark-color, .98);
-	z-index: 16;
-
-	@include media-query(handheld) {
-		width: 100%;
-		right: -100%;
-		padding: $base-spacing-unit/2;
-		background-color: $dark-color;
+	top: 30px;
+	right: 30px;
+	bottom: 30px;
+	left: 30px;
+	background-color: $primary-color;
+	z-index: -1;
+	opacity: 0;
+	
+	& > * {
+		opacity: 0;
 	}
- 
-	&:after {
-		content: '';
-		position: fixed;
+
+	.nav-open & {
 		top: 0px;
-		left: -30%;
+		right: 0px;
 		bottom: 0px;
-		width: 30%;
-		background-color: $cta-color;
+		left: 0px;
+		opacity: 1;
+		z-index: 100;
 
-		@include media-query(handheld) {
-			width: 0;
-			left: 0;
+		& > * {
+			opacity: 1;
 		}
 	}
 
-	&, &:after {
-		@include vendor(transition, all $global-duration*3 $global-function);
-
-		@include media-query(handheld) {
-			@include vendor(transition, all $global-duration $global-function);
-		}
-	}
-
-	nav {
-		display: table;
+	.centering {
 		height: 100%;
+		display: table;
 
-		ul {
+		.centered__item {
 			display: table-cell;
 			vertical-align: middle;
 		}
 	}
 
-	// Nav Panel Menu
-
 	nav {
-		ul {
-			li {
-				position: relative;
-				width: 100%;
-				text-align: left;
+		li {
+			display: inline-block;
+			width: 100%;
 
+			a {
+				display: inline-block;
+				width: 100%;
+				border: 0px;
+				text-align: left;
+				font-size: $font-size*3.5;
+				padding: $base-spacing-unit*.75 $base-spacing-unit;
+				color: $tertiary-color;
+				@include vendor(transition, all 0 $global-function);
+			}
+
+			@include media-query(handheld) {
 				a {
 					font-size: $font-size*2.5;
-					font-weight: 300;
-					padding: $button-size*1.5 $button-size;
-					text-align: left;
-					border: 0px;
-					color: $light-color;
-
-					&:hover {
-						background-color: transparent;
-						color: $cta-color;
-						text-indent: 5px;
-					}
-				}
-
-				&:hover {
-					a {
-						background-color: transparent;
-					}
-				}
-
-				ul {
-					display: block;
-					position: relative;
-					left: $base-spacing-unit;
-					height: 0;
-					overflow: hidden;
-
-					li {
-						a {
-							font-size: $font-size*1.3;
-							padding: $button-size/2;
-						}
-					}
+					padding: $base-spacing-unit/2;
 				}
 			}
-		}
 
-		@include media-query(handheld) {
-			ul {
-				li {
-					a {
-						font-size: $font-size*1.5;
-						width: 100%;
-						padding: $button-size 0;
-						border-bottom: $border-size solid rgba(0,0,0,.05);
-
-						&:hover {
-							text-indent: 0;
-						}
-					}
-
-					&:last-child {
-						a {
-							border-bottom: 0px;
-						}
-					}
+			@include media-query(palm) {
+				a {
+					font-size: $font-size*2;
+					padding: $base-spacing-unit/3 $base-spacing-unit/2;
 				}
 			}
 		}
@@ -169,23 +147,21 @@ nav {
 }
 
 // Nav Close Button
-
-$icon-stroke: 4px;
+$icon-size: 46px;
+$icon-stroke: 8px;
 
 .nav-close {
 	position: absolute;
-	top: $base-spacing-unit/2;
-	right: $base-spacing-unit/2;
-	width: $base-spacing-unit;
-	height: $base-spacing-unit;
+	top: $icon-size/3*2;
+	right: $icon-size/3*2;
+	width: $icon-size;
+	height: $icon-size;
 	@include rotate(45deg);
-	@include vendor(transition, all $global-duration*2 $global-function);
 	cursor: pointer;
 
 	&:before, &:after {
 		content: '';
 		position: absolute;
-		@include vendor(transition, all $global-duration*2 $global-function);
 	}
 	
 	&:before {
@@ -194,7 +170,7 @@ $icon-stroke: 4px;
 		width: 100%;
 		height: $icon-stroke;
 		margin-top: -$icon-stroke/2;
-		background-color: $light-color;
+		background-color: $tertiary-color;
 	}
 
 	&:after {
@@ -203,32 +179,12 @@ $icon-stroke: 4px;
 		height: 100%;
 		width: $icon-stroke;
 		margin-left: -$icon-stroke/2;
-		background-color: $light-color;
+		background-color: $tertiary-color;
 	}
 
 	&:hover {
-		@include rotate(-135deg);
-		@include vendor(transition, all $global-duration*2 $global-function);
-
 		&:before, &:after {
-			background-color: $error-color;
-			@include vendor(transition, all $global-duration*2 $global-function);
-		}
-	}
-
-	@include media-query(handheld) {
-		width: $base-spacing-unit/3*2;
-		height: $base-spacing-unit/3*2;
-	}
-}
-
-// Nav Body Modifier
-.nav-open {
-	.nav {
-		right: 0;
-
-		&:after {
-			left: 0;
+			background-color: $light-color;
 		}
 	}
 }

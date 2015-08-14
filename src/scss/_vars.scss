@@ -3,14 +3,14 @@
      $COLORS
 
  ------------------------------------------------------------------------------ */
-$brand-color: 		#228BBF;
+$brand-color: 		#3755A5;
 $primary-color:    	$brand-color;
-$secondary-color:  	#EAB808;
-$tertiary-color:   	#2D3742;
+$secondary-color:  	#DC952A;
+$tertiary-color:   	darken($primary-color, 25);
 
 $cta-color: 		$primary-color;
 
-$dark-color: 		#202020!default;
+$dark-color: 		#191919!default;
 $medium-color: 		#eee!default;
 $light-color: 		white!default;
 $error-color: 		#B43F37!default;
@@ -40,14 +40,12 @@ $h2:      ($font-size * 1.8)!default;
 $h3:      ($font-size * 1.7)!default;
 $h4:      ($font-size * 1.4)!default;
 $h5:      ($font-size * 1.3)!default;
-$h6:      ($font-size * 1.1)!default;
 
 $h1-height:      ($line-height * 1.8)!default;
 $h2-height:      ($line-height * 1.2)!default;
 $h3-height:      ($line-height * 1.1)!default;
 $h4-height:      ($line-height)!default;
 $h5-height:      ($line-height)!default;
-$h6-height:      ($line-height)!default;
 
 
 

@@ -2,12 +2,12 @@
 
   ul, ol {
     display: inline-block;
+    width: 100%;
   	font-family: $base-copy-font;
     font-size: $font-size;
     line-height: $line-height;
     letter-spacing: -.5px;
-    list-style: none;
-  	margin: 0 0 $base-spacing-unit/2 0;
+  	margin: 0 0 $base-spacing-unit/2 $base-spacing-unit/2;
 
     li {
 		  margin-bottom: $base-spacing-unit/4;
@@ -15,17 +15,10 @@
 		  .background-primary &, 
 	    .background-secondary &, 
 	    .background-tertiary &, 
-	    .background-medium &,
 	    .background-dark & {
 	    	color: $light-color;
 	    }
     }
-
-    &.bulleted {
-    	list-style: outside;
-    	margin: 0 0 $base-spacing-unit/2 $base-spacing-unit/2.5;
-    }
-
   }
 
 }

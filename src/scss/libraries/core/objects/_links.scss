@@ -19,6 +19,19 @@
         &:focus{
             outline:0; /*removes the dotted border*/
         }
+
+        .background-dark & {
+            color: $secondary-color;
+
+            &:hover {
+                color: darken($secondary-color, 20);
+            }
+        }
+
+        @include media-query(handheld) {
+            font-size: $font-size*.9;
+            line-height: $line-height*.9;
+        }
     }
 
     .link-arrow {
@@ -27,14 +40,14 @@
         padding: 0 $button-size 0 0;
         font-weight: 600;
         text-decoration: none;
-        margin-bottom: $base-spacing-unit;
+        margin-bottom: $base-spacing-unit/2;
 
         &:after {
             position: absolute;
             top: 50%;
             right: 0px;
             margin-top: -$font-size/6;
-            @include arrow(right, $font-size/2.2, $cta-color, $font-size/7);            
+            @include arrow(right, $font-size/2, $cta-color, $font-size/7);            
             @include vendor(transition, all $global-duration $global-function);
         }
 
@@ -42,6 +55,19 @@
             &:after {
                 right: -8px;
                 border-color: lighten($cta-color, 10);
+            }
+        }
+
+        .background-dark & {
+            
+            &:after {
+                border-color: $secondary-color;
+            }
+
+            &:hover {
+                &:after {
+                    border-color: darken($secondary-color, 20);
+                }
             }
         }
     }

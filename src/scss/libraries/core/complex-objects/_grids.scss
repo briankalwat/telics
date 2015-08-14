@@ -11,15 +11,8 @@
 	}
 
 	.grid__item {
-		margin-bottom: $base-spacing-unit;
-
-		// *:last-child {
-		// 	margin-bottom: 0px;
-		// }
-
 		@include media-query(handheld) {
 			padding-left: $base-spacing-unit/3;
-			margin-bottom: $base-spacing-unit/2;
 		}
 	}
 
@@ -28,7 +21,6 @@
 
 		.grid__item {
 			padding-left: $base-spacing-unit/2;
-			margin-bottom: $base-spacing-unit/2;
 		}
 	}
 }

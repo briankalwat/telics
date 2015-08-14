@@ -24,6 +24,11 @@
     .background-light & {
       color: $dark-color;
     }
+
+    @include media-query(handheld) {
+      font-size: $font-size*.9;
+      line-height: $line-height*.9;
+    }
   }
 
   b, strong {
@@ -78,17 +83,4 @@
   aside {
     
   }
-
-
-
-
-/* ============================================================
-
-    $FONT AWESOME OVERRIDES
-
-============================================================ */
-
-
-
-
 }

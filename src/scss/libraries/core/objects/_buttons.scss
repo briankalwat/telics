@@ -10,14 +10,21 @@
 		border: $button-size/6 solid $cta-color;
 		padding: ($button-size*1.4 - 2) $button-size*3 ($button-size*1.4 + 2);
 		margin-bottom: $base-spacing-unit/2;
-		margin-right: $base-spacing-unit/3;
 		background-color: $cta-color;
 		color: $light-color;
 		@include radius($border-size);
 
+		& + .btn {
+			margin-left: $base-spacing-unit/3;
+		}
+
 		@include media-query(handheld) {
 			font-size: $button-size;
 			padding: ($button-size*1.3 - 1) $button-size*2.5 ($button-size*1.3 + 1);
+		
+			& + .btn {
+				margin-left: 0px;
+			}
 		}
 
 		&:hover {
@@ -25,6 +32,60 @@
 			border-color: lighten($cta-color, 5);
 			color: $light-color;
 		}
+
+		// Buttons on Background Colors
+
+		.background-primary & {
+			background-color: darken($primary-color, 15);
+			border-color: darken($primary-color, 15);
+
+			&:hover {
+				background-color: darken($primary-color, 20);
+				border-color: darken($primary-color, 20);
+			}
+		}
+
+		.background-secondary & {
+			background-color: darken($secondary-color, 15);
+			border-color: darken($secondary-color, 15);
+
+			&:hover {
+				background-color: darken($secondary-color, 20);
+				border-color: darken($secondary-color, 20);
+			}
+		}
+
+		.background-tertiary & {
+			background-color: lighten($tertiary-color, 10);
+			border-color: lighten($tertiary-color, 10);
+
+			&:hover {
+				background-color: lighten($tertiary-color, 20);
+				border-color: lighten($tertiary-color, 20);
+			}
+		}
+
+		.background-dark & {
+			background-color: $secondary-color;
+			border-color: $secondary-color;
+
+			&:hover {
+				background-color: darken($secondary-color, 10);
+				border-color: darken($secondary-color, 10);
+			}
+		}
+
+		.background-medium & {
+			background-color: $secondary-color;
+			border-color: $secondary-color;
+
+			&:hover {
+				background-color: darken($secondary-color, 10);
+				border-color: darken($secondary-color, 10);
+			}
+		}
+
+		// Color-Explicit Buttons
 
 		&.btn-primary {
 			background-color: $primary-color;

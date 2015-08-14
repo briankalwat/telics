@@ -1,0 +1,7 @@
+{% set template = entry.pageTemplate %}
+
+{% if template == '' %}
+    {% include "fullwidth" %}
+{% else %}
+    {% include entry.pageTemplate %}
+{% endif %}

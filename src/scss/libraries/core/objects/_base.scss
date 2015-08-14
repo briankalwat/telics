@@ -38,14 +38,19 @@ body {
     position: relative;
     max-width: $max-width;
     margin: 0 auto;
-    padding: $base-spacing-unit*2 $base-spacing-unit*1.5 $base-spacing-unit;
+    padding: $base-spacing-unit*1.5 $base-spacing-unit*1.5 $base-spacing-unit;
+
+    @include media-query(desk) {
+        padding-left: $base-spacing-unit;
+        padding-right: $base-spacing-unit;
+    }
 
     @include media-query(portable) {
-        padding: $base-spacing-unit/1.5;
+        padding: $base-spacing-unit $base-spacing-unit/2 $base-spacing-unit/2;
     }
 
     @include media-query(handheld) {
-        padding: $base-spacing-unit*.8 $base-spacing-unit/3;
+        padding: $base-spacing-unit*1.5 $base-spacing-unit/3 $base-spacing-unit;
     }
 }
 
@@ -152,7 +157,13 @@ hr {
     }
 }
 
+@include namespace(hard) {
+    padding: 0px !important;
+}
 
+@include namespace(flush) {
+    margin: 0px !important;
+}
 
 
 /* ============================================================
