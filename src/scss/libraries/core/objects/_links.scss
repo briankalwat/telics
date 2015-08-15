@@ -10,7 +10,7 @@
         text-decoration: underline;
         cursor: pointer;
         letter-spacing: -.25px;
-        @include vendor(transition, all $global-duration $global-function);
+        @include vendor(transition, color $global-duration $global-function);
     
         &:hover {
             color: lighten($cta-color, 10);
