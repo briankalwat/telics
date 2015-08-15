@@ -23,9 +23,7 @@
 			background-size: cover !important;
 			background-repeat: no-repeat;
 			z-index: 1;
-			transform: scale(1);
-			@include vendor(transition, all $global-duration*18 $global-function);
-
+			
 			& + .shell {
 				* {
 					z-index: 2;
@@ -43,24 +41,7 @@
 				z-index: 0;
 			}
 		}
-
-		&:hover {
-			.image__item {
-				transform: scale(1.1);
-				@include vendor(transition, all $global-duration*18 $global-function);
-			}
-		}
 	}
-
-	// .image-blur {
-	// 	-webkit-filter: blur(10px);
-	// }
-
-	// .image-fixed {
-	// 	min-width: 110%;
-	// 	min-height: 110%;
-	// 	@include fixed(top -50px bottom -50px left -50px right -50px);
-	// }
 
 	.background-cover {
 		position: relative;

@@ -1,6 +1,7 @@
 @if $use-forms == true {
 
 	label {
+		cursor: default;
 		margin-bottom: $base-spacing-unit/3;
 
 		input {
@@ -20,11 +21,7 @@
 		box-shadow: 0 2px 0 darken($medium-color, 3);
 		@include radius($border-radius);
 		outline: none;
-
-		&:focus {
-			border-color: lighten($primary-color, 10);
-			box-shadow: 0 0 3px lighten($primary-color, 10), 0 0 7px lighten($primary-color, 10);
-		}
+		cursor: text;
 	}
 
 }
