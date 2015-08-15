@@ -13,6 +13,7 @@ public
 index.php
 robots.txt
 web.config
+license.key
 
 # Node Modules
 node_modules
