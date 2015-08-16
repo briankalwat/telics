@@ -1,8 +1,9 @@
 @if $use-images == true {
 
 	img {
-		display: block;
+		display: inline-block;
 		padding: 0px;
+		margin-bottom: $base-spacing-unit/2;
 
 		&.float--right {
 			margin: auto auto $base-spacing-unit $base-spacing-unit*1.5;

@@ -17,23 +17,34 @@
 
     <div class="grid">
         <div class="grid__item">
-            <h5 class="flush"><label class="flush" for="fromName">Your Name</label></h5>
-            <input id="fromName" type="text" name="fromName" value="{% if message is defined %}{{ message.fromName }}{% endif %}">
+            {# <h5><label for="fromName">Your Name</label></h5> #}
+            <input id="fromName" type="text" name="fromName" placeholder="Name" value="">
             {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
         </div><div class="grid__item">
-            <h5 class="flush"><label class="flush" for="fromEmail">Your Email</label></h5>
-            <input id="fromEmail" type="text" name="fromEmail" value="{% if message is defined %}{{ message.fromEmail }}{% endif %}">
+            {# <h5><label for="fromEmail">Your Email</label></h5> #}
+            <input id="phone" type="text" name="message[Phone]" placeholder="Phone Number" value="">
+            {{ message is defined and message ? errorList(message.getErrors('message[Phone]')) }}
+        </div><div class="grid__item">
+            {# <h5><label for="fromEmail">Your Email</label></h5> #}
+            <input id="fromEmail" type="text" name="fromEmail" placeholder="Email Address" value="">
             {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
         </div><div class="grid__item">
-            <h5 class="flush"><label class="flush" for="subject">Subject</label></h5>
-            <input id="subject" type="text" name="subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
-            {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+            {# <h5><label for="subject">Subject</label></h5> #}
+            {# <input id="subject" type="text" name="subject" placeholder="Subject" value="{% if message is defined %}{{ message.subject }}{% endif %}">
+            {{ message is defined and message ? errorList(message.getErrors('subject')) }} #}
+            <select id="subject" name="subject" class="chosen-select">
+                <option value="General Question">General Question</option>
+                <option value="Project Inquiry">Project Inquiry</option>
+                <option value="Website Problem">Website Problem</option>
+            </select>
         </div><div class="grid__item push-half--bottom">
-            <h5 class="flush"><label class="flush" for="message">Message</label></h5>
-            <textarea rows="10" cols="40" id="message" name="message">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+            {# <h5><label for="message">Message</label></h5> #}
+            <textarea rows="5" cols="40" id="message" name="message" placeholder="Enter Your Message...">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
             {{ message is defined and message ? errorList(message.getErrors('message')) }}
         </div>
     </div>
 
-    <input type="submit" value="Send" class="btn float--right">
+    <input id="verification" name="verification" type="text" placeholder="verfication">
+
+    <input type="submit" value="Send Message" class="btn float--right">
 </form>

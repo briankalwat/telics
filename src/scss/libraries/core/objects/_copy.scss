@@ -24,6 +24,10 @@
     .background-light & {
       color: $dark-color;
     }
+    
+    i {
+      color: $medium-color;
+    }
 
     @include media-query(handheld) {
       font-size: $font-size*.9;
@@ -76,11 +80,51 @@
 
 /* ============================================================
 
-    $ASIDE
+    $BLOCKQUOTE
 
 ============================================================ */
 
-  aside {
+  blockquote {
+    background-color: $primary-color;
+    padding: $base-spacing-unit/3*2;
+    padding-bottom: $base-spacing-unit*1.6;
+    @include radius($border-radius*2);
     
+    &, & p {
+      font-family: $base-copy-font;
+      font-style: italic;
+      font-size: $font-size*1.3;
+      line-height: $line-height*1.1;
+      letter-spacing: -1px;
+      font-weight: 500;
+      color: $light-color !important;
+      text-indent: 0;
+    }
+
+    footer {
+      display: inline-block;
+      width: auto;
+      float: right;
+      background-color: transparent;
+      font-size: $font-size*1.3;
+      margin-top: $base-spacing-unit/2.5;
+
+      &:before {
+        content: '—';
+        text-indent: 0;
+        position: relative;
+        left: -5px;
+      }
+    }
+
+    @include media-query(handheld) {
+      margin-bottom: $base-spacing-unit/2;
+
+      p, footer {
+        font-size: $font-size;
+        line-height: $line-height*.9;
+        letter-spacing: -.5px;
+      }
+    }
   }
 }

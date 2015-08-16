@@ -1,5 +1,18 @@
 @if $use-forms == true {
 
+	form, form * {
+		font-family: $base-heading-font;
+		font-size: $font-size;
+		line-height: $line-height;
+		text-align: left !important;
+	}
+
+	form {
+		h5 {
+			margin-bottom: $base-spacing-unit/4;
+		}
+	}
+
 	label {
 		cursor: default;
 		margin-bottom: $base-spacing-unit/3;
@@ -10,18 +23,27 @@
 	}
 
 	input {
-		margin-bottom: $base-spacing-unit/2;
+		margin-bottom: $base-spacing-unit/4;
 		@include vendor(transition, all $global-duration*2 $global-function);
 	}
 
 	input[type=text], input[type=password], textarea {
 		width: 100%;
-		padding: $base-spacing-unit/4;
+		padding: $base-spacing-unit/5 $base-spacing-unit/3;
 		border: 1px solid $medium-color;
 		box-shadow: 0 2px 0 darken($medium-color, 3);
 		@include radius($border-radius);
 		outline: none;
 		cursor: text;
+	}
+
+	textarea {
+		resize: none;
+	}
+	
+	// Honeypot Verification Field
+	#verification {
+		display: none;
 	}
 
 }

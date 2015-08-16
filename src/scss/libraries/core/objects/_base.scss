@@ -1,7 +1,46 @@
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+$loader-size: 80px;
+
 html {
     font-size: 100%;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
+    background-color: $dark-color;
+
+    &.loading {
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: $loader-size;
+            height: $loader-size;
+            background-color: $secondary-color;
+            margin-top: -$loader-size/2;
+            margin-left: -$loader-size/2;
+
+            -webkit-animation: sk-rotateplane 1s infinite ease-in-out;
+            animation: sk-rotateplane 1s infinite ease-in-out;
+        }
+    }
 }
 
 
@@ -41,8 +80,7 @@ body {
     padding: $base-spacing-unit*1.5 $base-spacing-unit*1.5 $base-spacing-unit;
 
     @include media-query(desk) {
-        padding-left: $base-spacing-unit;
-        padding-right: $base-spacing-unit;
+        padding: $base-spacing-unit*1.25 $base-spacing-unit $base-spacing-unit*.75;
     }
 
     @include media-query(portable) {
@@ -126,7 +164,7 @@ hr {
 ============================================================ */
 
 @include namespace(centered) {
-    text-align: center; 
+    text-align: center !important; 
 
     * { 
         text-align: center; 
@@ -137,8 +175,16 @@ hr {
     }
 }
 
+@include namespace(left) {
+    text-align: left !important; 
+
+    * { 
+        text-align: left; 
+    }
+}
+
 @include namespace(right) {
-    text-align: right; 
+    text-align: right !important; 
 
     * { 
         text-align: right; 
@@ -146,14 +192,6 @@ hr {
 
     p {
         display: inline-block;
-    }
-}
-
-@include namespace(left) {
-    text-align: left; 
-
-    * { 
-        text-align: left; 
     }
 }
 

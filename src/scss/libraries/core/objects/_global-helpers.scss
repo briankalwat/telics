@@ -91,31 +91,55 @@
 .background-primary {
     fill: $primary-color;
     background-color: $primary-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 .background-secondary {
     fill: $secondary-color;
     background-color: $secondary-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 .background-tertiary {
     fill: $tertiary-color;
     background-color: $tertiary-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 .background-medium {
     fill: $medium-color;
     background-color: $medium-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 .background-dark {
     fill: $dark-color;
     background-color: $dark-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 .background-light {
     fill: $light-color;
     background-color: $light-color;
+
+    &:not(.image-fill) + &:not(.image-fill) .shell {
+        padding-top: 0;
+    }
 }
 
 /* 
@@ -145,3 +169,21 @@
 .soft-quarter-bottom { padding-bottom: $base-spacing-unit/4; }
 .soft-quarter-ends { padding-top: $base-spacing-unit/4; padding-bottom: $base-spacing-unit/4; }
 .soft-quarter-sides { padding-left: $base-spacing-unit/4; padding-right: $base-spacing-unit/4; }
+
+.pull-top { margin-top: -$base-spacing-unit; }
+.pull-right { margin-right: -$base-spacing-unit; }
+.pull-bottom { margin-bottom: -$base-spacing-unit; }
+.pull-left { margin-left: -$base-spacing-unit; }
+
+.pull-half-top { margin-top: -$base-spacing-unit/2; }
+.pull-half-right { margin-right: -$base-spacing-unit/2; }
+.pull-half-bottom { margin-bottom: -$base-spacing-unit/2; }
+.pull-half-left { margin-left: -$base-spacing-unit/2; }
+
+/*
+    Transformations
+*/
+
+.rounded {
+    @include vendor(border-radius, 1000px);
+}

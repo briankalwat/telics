@@ -1,0 +1,16 @@
+{% set pageImage = entry.pageImage.first %}
+
+<section class="background-primary {% if pageImage != '' %}image-fill overlay {% endif %}">
+	{% if pageImage != '' %}
+		<div class="image__item" style="background-image: url('{{ pageImage.url }}');"></div>
+	{% endif %}
+	<div class="shell">
+		<div class="ratio--hero flush">
+			<div class="grid">
+				<div class="grid__item lap-and-up-two-thirds">
+					<h1 class="handheld-flush">{{ entry.title }}</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

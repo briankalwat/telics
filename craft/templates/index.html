@@ -2,6 +2,10 @@
 
 {% block content %}
 
+	{% if entry.pageTitle == 1 %}
+		{% include "_embeds/_page-hero" %}
+	{% endif %}
+
 	{% include "_embeds/_page-content" %}
 
 	{% include "_embeds/_breadcrumbs" %}
