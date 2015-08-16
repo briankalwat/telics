@@ -23,7 +23,7 @@ html {
     font-size: 100%;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    background-color: $dark-color;
+    background-color: $primary-color;
 
     &.loading {
         &:after {
@@ -33,7 +33,7 @@ html {
             left: 50%;
             width: $loader-size;
             height: $loader-size;
-            background-color: $secondary-color;
+            background-color: darken($primary-color, 20);
             margin-top: -$loader-size/2;
             margin-left: -$loader-size/2;
 

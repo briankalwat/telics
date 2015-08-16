@@ -6,14 +6,14 @@
 
 	$('.chosen-select').chosen({allow_single_deselect: true});
 
-	$('header a').on('click', function() {
+	$('header a').not('.nav-trigger').on('click', function() {
 		$('html').addClass('loading');
 		$('body').remove();
 
 		var href = $(this).attr('href');
 
         // Delay setting the location for one second
-        setTimeout(function() {window.location = href}, 1000);
+        setTimeout(function() {window.location = href}, 1200);
         return false;
 	});
 </script>

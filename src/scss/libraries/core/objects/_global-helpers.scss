@@ -146,6 +146,10 @@
     Layout 
 */
 
+@include namespace(full-width) {
+    width: 100%;
+}
+
 .soft { padding: $base-spacing-unit; }
 .soft-left { padding-left: $base-spacing-unit; }
 .soft-right { padding-right: $base-spacing-unit; }
