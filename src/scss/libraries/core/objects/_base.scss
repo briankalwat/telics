@@ -26,6 +26,8 @@ html {
     background-color: $primary-color;
 
     &.loading {
+        overflow: hidden;
+        
         &:after {
             content: '';
             position: absolute;

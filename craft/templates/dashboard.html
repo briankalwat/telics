@@ -1,0 +1,46 @@
+{% extends "_master" %}
+
+{% requireLogin %}
+
+{% block content %}
+
+<section class="background-medium">
+	<div class="shell">
+		{% if currentUser == lastSegment or currentUser.can('accessCp') %}
+			
+			{% set clientUsername = craft.users.username(lastSegment).first %}
+			
+			{% for entry in craft.entries.section('clientPages').relatedTo(clientUsername).limit(1) %}
+
+				<div class="grid">
+					<div class="grid__item">
+						<h1>{% if clientUsername.fullName %}{{ clientUsername.fullName }}{% else %}{{ clientUsername.companyName }}{% endif %}</h1>
+					</div><div class="grid__item lap-and-up-two-thirds">
+						{{ entry.body }}
+					</div><div class="grid__item lap-and-up-one-third">
+						{{ entry.sidebar }}
+					</div>
+				</div>
+
+			{% endfor %}
+
+		{% endif %}
+		{# {% for entry in craft.entries.section('clientPages').relatedTo(currentUser).limit(1) %}
+
+			{% set user = entry.clientAccess.first() %}
+
+			<div class="grid">
+				<div class="grid__item">
+					<h1>{% if currentUser.fullName %}{{ currentUser.fullName }}{% else %}{{ currentUser.companyName }}{% endif %}</h1>
+				</div><div class="grid__item lap-and-up-two-thirds">
+					{{ entry.body }}
+				</div><div class="grid__item lap-and-up-one-third">
+					{{ entry.sidebar }}
+				</div>
+			</div>
+
+		{% endfor %} #}
+	</div>
+</section>
+
+{% endblock %}

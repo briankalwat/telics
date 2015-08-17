@@ -20,7 +20,7 @@
             outline:0; /*removes the dotted border*/
         }
 
-        .background-dark &:not(.btn), .background-tertiary &:not(.btn) {
+        .background-dark &:not(.btn):not(.btn-small), .background-tertiary &:not(.btn):not(.btn-small) {
             color: $secondary-color;
 
             &:hover {
@@ -58,7 +58,7 @@
             }
         }
 
-        .background-dark &:not(.btn), .background-tertiary &:not(.btn) {
+        .background-dark &:not(.btn):not(.btn-small), .background-tertiary &:not(.btn):not(.btn-small) {
             
             &:after {
                 border-color: $secondary-color;

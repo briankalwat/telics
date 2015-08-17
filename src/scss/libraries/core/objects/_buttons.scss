@@ -57,17 +57,17 @@
 			}
 		}
 
-		.background-tertiary:not(.image-fill) & {
-			background-color: lighten($tertiary-color, 10);
-			border-color: lighten($tertiary-color, 10);
+		// .background-tertiary:not(.image-fill) & {
+		// 	background-color: lighten($tertiary-color, 10);
+		// 	border-color: lighten($tertiary-color, 10);
 
-			&:hover {
-				background-color: lighten($tertiary-color, 20);
-				border-color: lighten($tertiary-color, 20);
-			}
-		}
+		// 	&:hover {
+		// 		background-color: lighten($tertiary-color, 20);
+		// 		border-color: lighten($tertiary-color, 20);
+		// 	}
+		// }
 
-		.background-dark:not(.image-fill) & {
+		.background-dark:not(.image-fill) &, .background-tertiary:not(.image-fill) & {
 			background-color: $secondary-color;
 			border-color: $secondary-color;
 

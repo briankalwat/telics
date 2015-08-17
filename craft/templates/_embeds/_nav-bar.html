@@ -1,6 +1,18 @@
 <header>
 	<div class="shell hard--ends handheld-hard">
+
 		<a href="/" class="logo float--left">{% include "_embeds/_logo-wide" %}</a>
+
+		{% if lastSegment != 'signin' %}
+		<div class="user-nav">
+			{% if currentUser %}
+				<p><b>Hello, {% if currentUser.firstName %}{{ currentUser.firstName }}{% else %}{{ currentUser.companyName }}{% endif %}!</b>&nbsp; <a href="/dashboard/{{ currentUser }}">View Your Dashboard</a> or <a href="{{ logoutUrl }}">Sign Out</a></p>
+			{% else %}
+				<p><b>Welcome,</b> please <a href="{{ loginUrl }}">login</a> or <a href="#">register.</a></p>
+			{% endif %}
+		</div>
+		{% endif %}
+
 		<nav class="visuallyhidden--portable visuallyhidden--handheld flush">
 			<ul>
 				{% set uriSegment = craft.request.segment(1) %}

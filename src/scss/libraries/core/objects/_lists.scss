@@ -19,6 +19,12 @@
 	    	color: $light-color;
 	    }
     }
+
+    @include media-query(handheld) {
+      font-size: $font-size*.9;
+      line-height: $line-height*.9;
+      margin-left: $base-spacing-unit/3;
+    }
   }
 
 }

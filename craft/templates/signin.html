@@ -2,10 +2,10 @@
 
 {% block content %}
 
-<section>
+<section class="background-medium">
     <div class="shell">
-        <div class="grid centered">
-            <div class="grid__item lap-and-up-one-half left flush">
+        <div class="grid soft--ends centered">
+            <div class="grid__item lap-and-up-one-half handheld-centered flush">
                 <form method="post" accept-charset="UTF-8">
                     {{ getCsrfInput() }}
                     <input type="hidden" name="action" value="users/login">
@@ -22,7 +22,7 @@
                         Remember me
                     </label>
 
-                    <input type="submit" value="Sign In" class="btn-small flush--bottom">
+                    <input type="submit" value="Sign In" class="btn-small btn-primary push-half--right handheld-full-width">
 
                     <p><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
 

@@ -14,6 +14,9 @@
 </head>
 <body>
 
+	{% set firstSegment = craft.request.firstSegment %}
+	{% set lastSegment = craft.request.lastSegment %}
+
 	{% include "_embeds/_mobile-nav" %}
 
 	{% include "_embeds/_nav-bar" %}
@@ -25,6 +28,8 @@
 	{% endblock %}
 	
 	{% include "_embeds/_footer" %}
+
+	{# {% include "_embeds/_admin-menu" %} #}
 
 	{% include "_embeds/_global-scripts" %}
 </body>

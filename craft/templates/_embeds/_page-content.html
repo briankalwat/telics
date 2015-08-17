@@ -74,7 +74,7 @@
 						<div class="centered">
 							<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
 							<h3 class="flush">{{ user.fullName }}</h3>
-							<p><i>{{ user.position }}</i></p>
+							<p class="user-title"><i>{{ user.position }}</i></p>
 						</div>
 						{{ user.body }}
 						{% if block.enableCards == 1 %}</div>{% endif %}
@@ -125,7 +125,7 @@
 		<div class="centered">
 			<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
 			<h3 class="flush">{{ user.fullName }}</h3>
-			<p><i>{{ user.position }}</i></p>
+			<p class="user-title"><i>{{ user.position }}</i></p>
 		</div>
 		{{ user.body }}
 		{% if block.enableCards == 1 %}</div>{% endif %}
