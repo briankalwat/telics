@@ -189,24 +189,27 @@ body {
 .user-nav {
 	display: none;
 	position: absolute;
-	top: 100%;
-	margin-left: -$base-spacing-unit/3;
-	background-color: $primary-color;
-	padding: $base-spacing-unit/8 $base-spacing-unit/3 $base-spacing-unit/8;
-	box-shadow: 0 2px 0 rgba(0,0,0,.3), 0 0 5px rgba(0,0,0,.2);
-	@include vendor(border-bottom-right-radius, $border-radius*3);
-	@include vendor(border-bottom-left-radius, $border-radius*3);
+	top: 50%;
+	left: $base-spacing-unit*4;
+	width: $base-spacing-unit*.85;
+	height: $base-spacing-unit*.85;
+	margin-top: -$base-spacing-unit*.85/2;
+	background-color: darken($medium-color, 12);
+	box-shadow: inset 0 0 5px rgba(0,0,0,.1);
+	text-shadow: 0 0 5px rgba(0,0,0,.1);
+	cursor: pointer;
+	@include radius(1000px);
+	@include vendor(transition, all $global-duration $global-function);
 
-	p, a {
+	i {
+		width: 100%;
+		font-size: $font-size;
+		line-height: $base-spacing-unit*.85;
+		text-align: center;
 		color: $light-color;
-		font-size: $font-size*.8;
-		margin-bottom: 0px;
 	}
 
-	a {
-
-		&:hover {
-			color: lighten($primary-color, 25);
-		}
+	&:hover {
+		background-color: $tertiary-color;
 	}
 }
