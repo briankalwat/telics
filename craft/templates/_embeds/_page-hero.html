@@ -8,7 +8,7 @@
 		<div class="ratio--hero flush">
 			<div class="grid">
 				<div class="grid__item lap-and-up-two-thirds">
-					<h1 class="handheld-flush">{{ entry.title }}</h1>
+					<h1 class="handheld-flush">{% if pageTitle %}{{ pageTitle }}{% else %}{{ entry.title }}{% endif %}</h1>
 				</div>
 			</div>
 		</div>

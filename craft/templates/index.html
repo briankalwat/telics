@@ -11,7 +11,8 @@
 	{% if entry.type == 'jobListing' %}
 		<section class="background-tertiary">
 			<div class="shell centered">
-				<a href="/{{ entry.ancestors.first.slug }}/{{ entry.slug }}/apply" class="btn">Apply Now!</a>
+				<h1>Apply Online</h1>
+				<a href="/{{ entry.ancestors.first.slug }}/{{ entry.slug }}/apply" class="btn">Submit Application</a>
 			</div>
 		</section>
 	{% endif %}
