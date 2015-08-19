@@ -71,12 +71,61 @@
 				<div class="grid {% if block.enableCards == 1 %}grid--condensed {% endif %}">
 					{% for user in block.users %}<div class="grid__item {{ block.width }}">
 						{% if block.enableCards == 1 %}<div class="card">{% endif %}
-						<div class="centered">
-							<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
-							<h3 class="flush">{{ user.fullName }}</h3>
-							<p class="user-title"><i>{{ user.position }}</i></p>
-						</div>
-						{{ user.body }}
+
+						{% if block.width == '' %}<div class="grid soft-half--ends floating floating--left"><div class="grid__item floating__item portable-one-half anchored-one-third">{% endif %}
+
+							<div class="centered">
+								
+								{# Photos #}
+								{% if block.showPhotos %}
+									<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
+								{% endif %}
+
+								<h3 {% if block.showPositions %}class="flush"{% endif %}>{{ user.fullName }}</h3>
+								
+								{# Positions #}
+								{% if block.showPositions %}
+									<p class="user-title"><i>{{ user.position }}</i></p>
+								{% endif %}
+							</div>
+
+						{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds">{% endif %}
+						
+							{# Bios #}
+							{% if block.showBios %}
+								{{ user.body }}
+							{% endif %}
+							
+							{% if block.showBios == 0 %}
+								<div class="centered">
+							{% endif %}
+
+							{# Phones #}
+							{% if block.showPhones and user.phone %}
+								<p class="{% if block.showEmails %}flush {% endif %}">
+								{% if user.phoneUnformatted %}
+									<a href="tel:+1{{ user.phoneUnformatted }}">
+								{% endif %}
+
+									{{ user.phone }}
+
+								{% if user.phoneUnformatted %}
+									</a>
+								{% endif %}
+								</p>
+							{% endif %}
+							
+							{# Emails #}
+							{% if block.showEmails and user.email %}
+								<p><a href="mailto:{{ user.email }}" class="push-bottom">{{ user.email }}</a></p>
+							{% endif %}
+
+							{% if block.showBios == 0 %}
+								</div>
+							{% endif %}
+
+						{% if block.width == '' %}</div></div>{% endif %}
+
 						{% if block.enableCards == 1 %}</div>{% endif %}
 					</div>{% endfor %}
 				</div>
@@ -112,7 +161,7 @@
 	Blockquote Element
 
 	#}{% if block.type == 'blockquoteElement' %}<div class="grid__item {{ block.width }}">
-		<blockquote>
+		<blockquote class="flush">
 			{{ block.blockquote }}
 			<footer>{{ block.source }}</footer>
 		</blockquote>
@@ -122,12 +171,60 @@
 
 	#}{% if block.type == 'userElement' %}{% for user in block.user %}<div class="grid__item {{ block.width }}">
 		{% if block.enableCards == 1 %}<div class="card">{% endif %}
-		<div class="centered">
-			<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
-			<h3 class="flush">{{ user.fullName }}</h3>
-			<p class="user-title"><i>{{ user.position }}</i></p>
-		</div>
-		{{ user.body }}
+			{% if block.width == '' %}<div class="grid soft-half--ends floating floating--left"><div class="grid__item floating__item portable-one-half anchored-one-third">{% endif %}
+
+			<div class="centered">
+				
+				{# Photos #}
+				{% if block.showPhotos %}
+					<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
+				{% endif %}
+
+				<h3 {% if block.showPositions %}class="flush"{% endif %}>{{ user.fullName }}</h3>
+				
+				{# Positions #}
+				{% if block.showPositions %}
+					<p class="user-title"><i>{{ user.position }}</i></p>
+				{% endif %}
+			</div>
+
+			{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds">{% endif %}
+						
+			{# Bios #}
+			{% if block.showBios %}
+				{{ user.body }}
+			{% endif %}
+			
+			{% if block.showBios == 0 %}
+				<div class="centered">
+			{% endif %}
+
+			{# Phones #}
+			{% if block.showPhones and user.phone %}
+				<p class="{% if block.showEmails %}flush {% endif %}">
+				{% if user.phoneUnformatted %}
+					<a href="tel:+1{{ user.phoneUnformatted }}">
+				{% endif %}
+
+					{{ user.phone }}
+
+				{% if user.phoneUnformatted %}
+					</a>
+				{% endif %}
+				</p>
+			{% endif %}
+			
+			{# Emails #}
+			{% if block.showEmails and user.email %}
+				<p><a href="mailto:{{ user.email }}" class="push-bottom">{{ user.email }}</a></p>
+			{% endif %}
+
+			{% if block.showBios == 0 %}
+				</div>
+			{% endif %}
+
+			{% if block.width == '' %}</div></div>{% endif %}
+
 		{% if block.enableCards == 1 %}</div>{% endif %}
 	</div>{% endfor %}{% endif %}{#
 

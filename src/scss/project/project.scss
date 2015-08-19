@@ -56,6 +56,29 @@ body {
 	}
 }
 
+// Logo
+// .logo {
+// 	position: relative;
+// 	top: 18px;
+// 	left: -12px;
+// 	max-width: 200px;
+// 	width: 200px;
+// 	height: 60px;
+// 	margin-bottom: 0;
+	
+// 	.mark-top, .mark-bottom {
+// 		position: absolute;
+// 		transform: translate(0px, 0px);
+// 		@include vendor(transition, all $global-duration*2 $global-function);
+// 	}
+
+// 	@include media-query(handheld) {
+// 		transform: scale(.55);
+// 		top: 1px;
+// 		left: -38px;
+// 	}
+// }
+
 // Breadcrumbs
 
 .crumbs {

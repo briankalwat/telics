@@ -17,9 +17,9 @@
 				</div>
 				{% for contact in entry.contacts %}{% set photo = contact.getPhotoUrl(160) %}<div class="grid__item anchored-one-third portable-one-half">
 					<div class="card">
-						<div class="centered">
+						<div class="">
 							
-							<img src="{% if photo %}{{ photo }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="" class="user-image rounded">
+							{# <img src="{% if photo %}{{ photo }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="" class="user-image rounded"> #}
 
 							<h3 class="">{{ contact.fullName }}</h3>
 
@@ -28,7 +28,7 @@
 							{% endif %}
 
 							{% if contact.phone or contact.email %}
-								<p>{% if contact.phone %}{{ contact.phone }}<br>{% endif %}{% if contact.email %}<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>{% endif %}</p>
+								<p>{% if contact.phone %}{% if contact.phoneUnformatted %}<a href="tel:1+{{ contact.phoneUnformatted }}">{% endif %}{{ contact.phone }}{% if contact.phoneUnformatted %}</a>{% endif %}<br>{% endif %}{% if contact.email %}<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>{% endif %}</p>
 							{% endif %}
 						</div>
 					</div>
