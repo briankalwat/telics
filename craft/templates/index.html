@@ -1,7 +1,5 @@
 {% extends "_master" %}
 
-{# {% set title = entry.title %} #}
-
 {% block content %}
 
 	{% if entry.pageTitle == 1 %}
@@ -9,6 +7,14 @@
 	{% endif %}
 
 	{% include "_embeds/_page-content" %}
+	
+	{% if entry.type == 'jobListing' %}
+		<section class="background-tertiary">
+			<div class="shell centered">
+				<a href="/{{ entry.ancestors.first.slug }}/{{ entry.slug }}/apply" class="btn">Apply Now!</a>
+			</div>
+		</section>
+	{% endif %}
 
 	{% include "_embeds/_breadcrumbs" %}
 

@@ -1,0 +1,76 @@
+{% extends "_master" %}
+
+{% block content %}
+
+	{% if entry.pageTitle == 1 %}
+		{% include "_embeds/_page-hero" %}
+	{% endif %}
+
+	{% include "_embeds/_page-content" %}
+	
+	<section class="background-medium">
+		<div class="shell">
+			<h1>Stuff</h1>
+		</div>
+	</section>
+{#
+
+First Name
+Last Name
+Address
+City
+State
+Zip
+Home Phone
+Work Phone
+Email
+Start Date
+Position (Select)
+Salary (Dollars Per Hour)
+Employed?
+May We Contact?
+Have You Ever Worked Here?
+If yes, when?
+Legal to Work in the US?
+Convicted of a Crime?
+If yes, explain?
+Highest level of edu (dropdown)
+Graduate?
+Degree Received
+Served in Military?
+If yes, Start/End Dates and Rank
+
+3 Most Recent Employers
+- Name
+- City
+- State
+- Title
+- Start Date
+- End Date
+- Reason for Leaving
+- Supervisor's Name
+- Title
+- Phone Number
+
+Would you relocate?
+Indicate states you would prefer
+
+Why are you leaving your current job?
+Most important attributes in employee? Why?
+"" employER
+What in life is most important to you? Why?
+Anything else you want to tell us?
+
+I certify that the facts in the application being submitted are true and complete to the best of my knowledge. I understand that if I am hired, falsification of any of the information on the application being submitted will be considered grounds for termination of employment. I release the company and any parties they contact, or any third party involved in this investigation, from any and all liability arising out of this verification, and reference checking that they may do. I understand that if hired, my employment is for no definite period of time and may be terminated at any time without prior notice. I also acknowledge that successful passing of a pre-employment drug screening is a condition of employment.
+
+I have read and understand the above statement (checkbox)
+
+TELICS does not discriminate against any employee or applicant because of race, disability, color, religion, sex, national origin in regard to any position for which the employee or applicant of employment is qualified. 
+
+TELICS provides equal opportunity and affirmative action for Vietnam veterans, special disabled veterans, and veterans who served on active duty during a war or in a campaign or expedition for which a campaign badge has been authorized.
+
+#}
+
+	{% include "_embeds/_breadcrumbs" %}
+
+{% endblock %}
