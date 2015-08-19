@@ -137,6 +137,7 @@ body {
 	margin-bottom: $base-spacing-unit/2;
 	background-color: $light-color;
 	@include radius($border-radius*2);
+	overflow: hidden;
 
 	*:not(a) {
 		color: $dark-color !important;

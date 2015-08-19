@@ -82,60 +82,9 @@
 					</div>{% endif %}
 
 					{% for user in block.users %}<div class="grid__item {{ block.width }}">
-						{% if block.enableCards == 1 %}<div class="card">{% endif %}
 
-						{% if block.width == '' %}<div class="grid soft-half--ends floating floating--left"><div class="grid__item floating__item portable-one-half anchored-one-third">{% endif %}
+						{% include '_embeds/_user-data' %}
 
-							{% if block.showPhotos %}<div class="centered">{% endif %}
-								
-								{# Photos #}
-								{% if block.showPhotos %}
-									<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
-								{% endif %}
-
-								<h3>{{ user.fullName }}</h3>
-								
-								{# Positions #}
-								{% if block.showPositions %}
-									<p class="user-title"><i>{{ user.position }}</i></p>
-								{% endif %}
-
-							{% if block.showPhotos %}</div>{% endif %}
-
-						{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds">{% endif %}
-						
-							{# Bios #}
-							{% if block.showBios %}
-								{{ user.body }}
-							{% endif %}
-							
-							<div class="handheld-centered">
-
-								{# Phones #}
-								{% if block.showPhones and user.phone %}
-									<p class="{% if block.showEmails %}flush {% endif %}">
-									{% if user.phoneUnformatted %}
-										<a href="tel:+1{{ user.phoneUnformatted }}">
-									{% endif %}
-
-										{{ user.phone }}
-
-									{% if user.phoneUnformatted %}
-										</a>
-									{% endif %}
-									</p>
-								{% endif %}
-								
-								{# Emails #}
-								{% if block.showEmails and user.email %}
-									<p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
-								{% endif %}
-
-							</div>
-
-						{% if block.width == '' %}</div></div>{% endif %}
-
-						{% if block.enableCards == 1 %}</div>{% endif %}
 					</div>{% endfor %}
 				</div>
 			</div>
@@ -184,59 +133,9 @@
 	User Element
 
 	#}{% if block.type == 'userElement' %}{% for user in block.user %}<div class="grid__item {{ block.width }}">
-		{% if block.enableCards == 1 %}<div class="card">{% endif %}
-			{% if block.width == '' %}<div class="grid soft-half--ends floating floating--left"><div class="grid__item floating__item portable-one-half anchored-one-third">{% endif %}
+		
+		{% include '_embeds/_user-data' %}
 
-			{% if block.showPhotos %}<div class="centered">{% endif %}
-				
-				{# Photos #}
-				{% if block.showPhotos %}
-					<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
-				{% endif %}
-
-				<h3>{{ user.fullName }}</h3>
-				
-				{# Positions #}
-				{% if block.showPositions %}
-					<p class="user-title"><i>{{ user.position }}</i></p>
-				{% endif %}
-				
-			{% if block.showPhotos %}</div>{% endif %}
-
-			{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds">{% endif %}
-						
-			{# Bios #}
-			{% if block.showBios %}
-				{{ user.body }}
-			{% endif %}
-			
-			<div class="handheld-centered">
-
-				{# Phones #}
-				{% if block.showPhones and user.phone %}
-					<p class="{% if block.showEmails %}flush {% endif %}">
-					{% if user.phoneUnformatted %}
-						<a href="tel:+1{{ user.phoneUnformatted }}">
-					{% endif %}
-
-						{{ user.phone }}
-
-					{% if user.phoneUnformatted %}
-						</a>
-					{% endif %}
-					</p>
-				{% endif %}
-				
-				{# Emails #}
-				{% if block.showEmails and user.email %}
-					<p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
-				{% endif %}
-
-			</div>
-
-			{% if block.width == '' %}</div></div>{% endif %}
-
-		{% if block.enableCards == 1 %}</div>{% endif %}
 	</div>{% endfor %}{% endif %}{#
 
 		Contact Form Element
