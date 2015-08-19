@@ -12,10 +12,10 @@ body {
 		}
 
 		& + section {
-			margin-top: 92px;
+			margin-top: 120px;
 
 			@include media-query(handheld) {
-				margin-top: 68px;
+				margin-top: 100px;
 			}
 		}
 	}
@@ -23,43 +23,9 @@ body {
 
 
 // Logo
-.logo {
-	position: relative;
-	top: 14px;
-	left: -12px;
-	max-width: 200px;
-	width: 200px;
-	height: 60px;
-	margin-bottom: 0;
-	
-	.mark-top, .mark-bottom {
-		position: absolute;
-		transform: translate(0px, 0px);
-		@include vendor(transition, all $global-duration*2 $global-function);
-	}
-
-	&:hover {
-
-		.mark-top {
-			transform: translate(5px, -5px);
-		}
-
-		.mark-bottom {
-			transform: translate(-5px, 5px);
-		}
-	}
-
-	@include media-query(handheld) {
-		transform: scale(.85);
-		top: 3px;
-		left: -8px;
-	}
-}
-
-// Logo
 // .logo {
 // 	position: relative;
-// 	top: 18px;
+// 	top: 14px;
 // 	left: -12px;
 // 	max-width: 200px;
 // 	width: 200px;
@@ -72,12 +38,46 @@ body {
 // 		@include vendor(transition, all $global-duration*2 $global-function);
 // 	}
 
+// 	&:hover {
+
+// 		.mark-top {
+// 			transform: translate(5px, -5px);
+// 		}
+
+// 		.mark-bottom {
+// 			transform: translate(-5px, 5px);
+// 		}
+// 	}
+
 // 	@include media-query(handheld) {
-// 		transform: scale(.55);
-// 		top: 1px;
-// 		left: -38px;
+// 		transform: scale(.85);
+// 		top: 3px;
+// 		left: -8px;
 // 	}
 // }
+
+// Logo
+.logo {
+	position: relative;
+	top: 15px;
+	left: -12px;
+	max-width: 200px;
+	width: 200px;
+	height: 60px;
+	margin-bottom: 0;
+	
+	.mark-top, .mark-bottom {
+		position: absolute;
+		transform: translate(0px, 0px);
+		@include vendor(transition, all $global-duration*2 $global-function);
+	}
+
+	@include media-query(handheld) {
+		transform: scale(.85);
+		top: 8px;
+		left: -12px;
+	}
+}
 
 // Breadcrumbs
 

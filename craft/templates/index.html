@@ -8,36 +8,6 @@
 
 	{% include "_embeds/_page-content" %}
 
-	{% if entry.contacts | length %}
-	<section class="background-medium">
-		<div class="shell">
-			<div class="grid grid--condensed">
-				<div class="grid__item">
-					<h1 class="">Service Contacts</h1>
-				</div>
-				{% for contact in entry.contacts %}{% set photo = contact.getPhotoUrl(160) %}<div class="grid__item anchored-one-third portable-one-half">
-					<div class="card">
-						<div class="">
-							
-							{# <img src="{% if photo %}{{ photo }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="" class="user-image rounded"> #}
-
-							<h3 class="">{{ contact.fullName }}</h3>
-
-							{% if contact.position %}
-								<p class="user-title"><i>{{ contact.position }}</i></p>
-							{% endif %}
-
-							{% if contact.phone or contact.email %}
-								<p>{% if contact.phone %}{% if contact.phoneUnformatted %}<a href="tel:1+{{ contact.phoneUnformatted }}">{% endif %}{{ contact.phone }}{% if contact.phoneUnformatted %}</a>{% endif %}<br>{% endif %}{% if contact.email %}<a href="mailto:{{ contact.email }}">{{ contact.email }}</a>{% endif %}</p>
-							{% endif %}
-						</div>
-					</div>
-				</div>{% endfor %}
-			</div>
-		</div>
-	</section>
-	{% endif %}
-
 	{% include "_embeds/_breadcrumbs" %}
 
 {% endblock %}
