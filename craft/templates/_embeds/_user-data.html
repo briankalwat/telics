@@ -1,11 +1,11 @@
 {% if block.enableCards == 1 %}<div class="card">{% endif %}
-	{% if block.width == '' %}<div class="grid soft-half--ends floating floating--left"><div class="grid__item floating__item portable-one-half anchored-one-third">{% endif %}
+	{% if block.width == '' %}<div class="grid {% if block.showPhotos %}soft-half--ends {% endif %}flush floating floating--left handheld-hard"><div class="grid__item floating__item portable-one-half anchored-one-third hard">{% endif %}
 
 	{% if block.showPhotos %}<div class="centered">{% endif %}
 		
 		{# Photos #}
 		{% if block.showPhotos %}
-			<img src="{{ user.getPhotoUrl(160) }}" alt="" class="user-image rounded">
+			<img src="{% if user.getPhotoUrl %}{{ user.getPhotoUrl(160) }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="" class="user-image rounded">
 		{% endif %}
 
 		<h3>{{ user.fullName }}</h3>
@@ -17,7 +17,7 @@
 		
 	{% if block.showPhotos %}</div>{% endif %}
 
-	{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds">{% endif %}
+	{% if block.width == '' %}</div><div class="grid__item floating__item portable-one-half anchored-two-thirds hard"><div class="soft--left handheld-hard">{% endif %}
 	
 	{% if block.showPhotos %}<div class="handheld-centered">{% endif %}
 		
@@ -48,6 +48,6 @@
 
 	{% if block.showPhotos %}</div>{% endif %}
 
-	{% if block.width == '' %}</div></div>{% endif %}
+	{% if block.width == '' %}</div></div></div>{% endif %}
 
 {% if block.enableCards == 1 %}</div>{% endif %}
