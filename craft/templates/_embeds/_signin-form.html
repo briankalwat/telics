@@ -1,0 +1,23 @@
+<form id="signin-form" method="post" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="users/login">
+    
+    <h1 class="centered">Sign In</h1>
+    <input id="loginName" type="text" name="loginName"
+        value="{{ craft.session.rememberedUsername }}" placeholder="username">
+
+    <input id="password" type="password" name="password" placeholder="password">
+
+    {# <label class="full-width centered">
+        <input type="checkbox" name="rememberMe" value="1">
+        Remember me
+    </label> #}
+
+    <input type="submit" value="Sign In" class="btn full-width centered">
+
+    <p class="centered"><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
+
+    {% if errorMessage is defined %}
+        <p>{{ errorMessage }}</p>
+    {% endif %}
+</form>

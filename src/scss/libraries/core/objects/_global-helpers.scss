@@ -146,6 +146,10 @@
     Layout 
 */
 
+.hidden {
+    display: none;
+}
+
 @include namespace(full-width) {
     width: 100%;
 }
@@ -183,6 +187,26 @@
 .pull-half-right { margin-right: -$base-spacing-unit/2; }
 .pull-half-bottom { margin-bottom: -$base-spacing-unit/2; }
 .pull-half-left { margin-left: -$base-spacing-unit/2; }
+
+.pull-quarter-top { margin-top: -$base-spacing-unit/4; }
+.pull-quarter-right { margin-right: -$base-spacing-unit/4; }
+.pull-quarter-bottom { margin-bottom: -$base-spacing-unit/4; }
+.pull-quarter-left { margin-left: -$base-spacing-unit/4; }
+
+.push-top { margin-top: $base-spacing-unit; }
+.push-right { margin-right: $base-spacing-unit; }
+.push-bottom { margin-bottom: $base-spacing-unit; }
+.push-left { margin-left: $base-spacing-unit; }
+
+.push-half-top { margin-top: $base-spacing-unit/2; }
+.push-half-right { margin-right: $base-spacing-unit/2; }
+.push-half-bottom { margin-bottom: $base-spacing-unit/2; }
+.push-half-left { margin-left: $base-spacing-unit/2; }
+
+.push-quarter-top { margin-top: $base-spacing-unit/4; }
+.push-quarter-right { margin-right: $base-spacing-unit/4; }
+.push-quarter-bottom { margin-bottom: $base-spacing-unit/4; }
+.push-quarter-left { margin-left: $base-spacing-unit/4; }
 
 /*
     Transformations

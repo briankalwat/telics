@@ -18,12 +18,22 @@
 	    .background-dark & {
 	    	color: $light-color;
 	    }
+
+      .background-light &, 
+      .background-medium & {
+        color: $dark-color;
+      }
     }
 
     @include media-query(handheld) {
       font-size: $font-size*.9;
       line-height: $line-height*.9;
       margin-left: $base-spacing-unit/3;
+    }
+
+    &.unstyled {
+      list-style: none;
+      margin-left: 0px;
     }
   }
 

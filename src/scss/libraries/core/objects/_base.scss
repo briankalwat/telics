@@ -23,10 +23,11 @@ html {
     font-size: 100%;
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    background-color: $primary-color;
+    background-color: $dark-color;
 
     &.loading {
         overflow: hidden;
+        background-color: $primary-color;
         
         &:after {
             content: '';

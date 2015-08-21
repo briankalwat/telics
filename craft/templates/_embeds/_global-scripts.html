@@ -1,16 +1,25 @@
 <script>
-	$('.nav-trigger, .nav-close').on('click', function() {
+	$('.nav-trigger').on('click', function() {
+		$('html').removeClass();
 		$('html').toggleClass('nav-open');
 		return false;
 	});
 
-	$('.chosen-select').chosen({allow_single_deselect: true});
+	$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
 
-	$('.user-nav').on('click', function(){
-		$('.user-nav').toggleClass('open');
+	$('.signin-trigger').on('click', function(){
+		if ($('html').hasClass('signin')) {
+			$('html').removeClass('signin');
+		} else {
+			$('html').removeClass();
+			$('html').toggleClass('signin');
+			$('#loginName').focus();
+		}
+		return false;
 	});
 
-	$('header a').not('.nav-trigger').on('click', function() {
+	$('header a').not('.nav-trigger').not('.signin-trigger').on('click', function() {
+		$('html').removeClass();
 		$('html').addClass('loading');
 		$('body').remove();
 	});

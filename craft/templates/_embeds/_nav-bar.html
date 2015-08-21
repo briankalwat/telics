@@ -1,25 +1,18 @@
 <header>
-	<div class="shell hard--ends handheld-hard">
-
-		{# <a href="/" class="logo float--left">{% include "_embeds/_logo-wide" %}</a> #}
+	<div class="shell hard">
 
 		<a href="/" class="logo float--left">{% include "_embeds/_logo-original" %}</a>
 
-		<div class="user-nav">
-			<i class="fa fa-user"></i>
-			{# {% if currentUser %}
-			<img src="{{ currentUser.getPhotoUrl }}" alt="">
-			{% else %}
-				<i class="fa fa-user"></i>
-			{% endif %} #}
-		</div>
-
 		<nav class="visuallyhidden--portable visuallyhidden--handheld flush">
 			<ul>
-				{% set uriSegment = craft.request.segment(1) %}
-				{% for entry in craft.entries.section('pages').level(1) %}<li {% if uriSegment == entry.slug %}class="active"{% endif %}>
-						<a href="{{ entry.url }}">{{ entry.title }}</a>
-					</li>{% endfor %}
+				<li>
+					<a href="#" class="signin-trigger">
+						<i class="fa fa-user"></i>
+					</a>	
+				</li>{#
+				#}{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
+					<a href="{{ entry.url }}">{{ entry.title }}</a>
+				</li>{% endfor %}
 			</ul>
 		</nav>
 		<nav class="visuallyhidden--anchored flush">

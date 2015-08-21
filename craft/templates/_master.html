@@ -17,19 +17,52 @@
 	{% set firstSegment = craft.request.firstSegment %}
 	{% set lastSegment = craft.request.lastSegment %}
 
-	{% include "_embeds/_mobile-nav" %}
+	<div class="wrapper">
+		{% include "_embeds/_mobile-nav" %}
 
-	{% include "_embeds/_nav-bar" %}
+		{% include "_embeds/_nav-bar" %}
 
-	{% block content %}
+		{% block content %}
 
-		{# Extending Template's Contents Injected Here #}
+			{# Extending Template's Contents Injected Here #}
+			
+		{% endblock %}
 		
-	{% endblock %}
-	
-	{% include "_embeds/_footer" %}
+		{% include "_embeds/_footer" %}
+	</div>
 
-	{# {% include "_embeds/_admin-menu" %} #}
+	{% if currentUser %}
+		<section class="signin background-secondary">
+			<i class="signin-trigger nav-close"></i>
+				<div class="sidebar floating floating--left">
+					<div class="floating__item">
+						<h1>Hello, {% if currentUser.companyName %}{{ currentUser.companyName }}{% else %}{{ currentUser.firstName }}{% endif %}</h1>
+						<p>Have a question? <a href="/contact">Contact Us!</a></p>
+						<a href="{{ logoutUrl }}" class="btn flush">Sign Out</a>
+					</div>
+				</div>
+				<div class="body background-light">
+					{{ currentUser.body }}
+					{% if currentUser.documents|length %}
+					<h2>Documents</h2>
+					<table>{% for document in currentUser.documents %}
+						<tr>
+							<td>{{ document.title }}</td>
+							<td class="centered"><a href="{{ document.url }}">View/Download</a></td>
+						</tr>
+					{% endfor %}</table>
+					{% endif %}
+				</div>
+		</section>
+	{% else %}
+		<section class="signin floating background-secondary">
+			<i class="signin-trigger nav-close"></i>
+				<div class="floating__item">
+					{% include "_embeds/_signin-form" %}
+				</div>
+			</div>
+		</section>
+	{% endif %}
 
 	{% include "_embeds/_global-scripts" %}
 </body>
