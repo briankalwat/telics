@@ -1,24 +1,12 @@
 <script>
-	$('.nav-trigger').on('click', function() {
-		$('html').removeClass();
+	$('a[data-trigger="mobilenav"]').on('click', function() {
 		$('html').toggleClass('nav-open');
 		return false;
 	});
 
 	$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
 
-	$('.signin-trigger').on('click', function(){
-		if ($('html').hasClass('signin')) {
-			$('html').removeClass('signin');
-		} else {
-			$('html').removeClass();
-			$('html').toggleClass('signin');
-			$('#loginName').focus();
-		}
-		return false;
-	});
-
-	$('header a').not('.nav-trigger').not('.signin-trigger').on('click', function() {
+	$('a:not([data-trigger])').on('click', function() {
 		$('html').removeClass();
 		$('html').addClass('loading');
 		$('body').remove();

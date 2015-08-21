@@ -1,23 +1,22 @@
 <header>
 	<div class="shell hard">
 
-		<a href="/" class="logo float--left">{% include "_embeds/_logo-original" %}</a>
+		<a href="/" class="logo float--left" data-loading="y">{% include "_embeds/_logo-original" %}</a>
+
+		{# <div class="usernav">
+			<i class="fa fa-user"></i>
+		</div> #}
 
 		<nav class="visuallyhidden--portable visuallyhidden--handheld flush">
 			<ul>
-				<li>
-					<a href="#" class="signin-trigger">
-						<i class="fa fa-user"></i>
-					</a>	
-				</li>{#
-				#}{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
-					<a href="{{ entry.url }}">{{ entry.title }}</a>
+				{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
+					<a href="{{ entry.url }}" data-loading="y">{{ entry.title }}</a>
 				</li>{% endfor %}
 			</ul>
 		</nav>
 		<nav class="visuallyhidden--anchored flush">
 			<ul>
-				<li><a href="#" class="nav-trigger"><i class="fa fa-fw fa-bars"></i> Menu</a></li>
+				<li><a href="#" class="nav-trigger" data-trigger='mobilenav'><i class="fa fa-fw fa-bars"></i> Menu</a></li>
 			</ul>
 		</nav>
 	</div>
