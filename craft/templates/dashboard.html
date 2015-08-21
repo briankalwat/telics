@@ -2,29 +2,54 @@
 
 {% requireLogin %}
 
+{% set pageTitle = "Dashboard" %}
+
 {% block content %}
 
 <section class="background-medium">
 	<div class="shell">
-		{% if currentUser == lastSegment or currentUser.can('accessCp') %}
-			
-			{% set clientUsername = craft.users.username(lastSegment).first %}
-			
-			{% for entry in craft.entries.section('clientPages').relatedTo(clientUsername).limit(1) %}
 
-				<div class="grid">
-					<div class="grid__item">
-						<h1>{% if clientUsername.fullName %}{{ clientUsername.fullName }}{% else %}{{ clientUsername.companyName }}{% endif %}</h1>
-					</div><div class="grid__item lap-and-up-two-thirds">
-						{{ entry.body }}
-					</div><div class="grid__item lap-and-up-one-third">
-						{{ entry.sidebar }}
-					</div>
-				</div>
+		<div class="grid">
+			<div class="grid__item">
+				<a href="{{ logoutUrl }}" class="btn flush float--right">Sign Out</a>
+				<h1>{% if currentUser.fullName %}{{ currentUser.fullName }}{% else %}{{ currentUser.companyName }}{% endif %}</h1>
+				<hr>
+				{# <p>Have a question? <a href="/contact">Let Us Know!</a></p> #}
+				
+			</div><div class="grid__item anchored-two-thirds">
+				{{ currentUser.body }}
+			</div><div class="grid__item anchored-one-third">
+				{% if currentUser.documents|length %}
+					{{ currentUser.sidebar }}
+					<h2>Documents</h2>
+					<table class="background-light">
+						<tr>
+							<th>Name</th>
+							<th class="centered">Link</th>
+						</tr>
+						{% for document in currentUser.documents %}
+							<tr>
+								<td>{{ document.title }}</td>
+								<td class="centered"><a href="{{ document.url }}">View/Download</a></td>
+							</tr>
+						{% endfor %}
+					</table>
+				{% endif %}
+			</div>
+		</div>
 
-			{% endfor %}
+	</div>
+</section>
 
-		{% endif %}
+<section class="background-primary">
+	<div class="shell">
+		<div class="grid centered">
+			<div class="grid__item lap-and-up-two-thirds">
+				<h2>Have a Question?</h2>
+				<p class="text-larger">Feel free to contact us any time.</p><br>
+				<a href="/contact" class="btn">Contact Us</a>
+			</div>
+		</div>
 	</div>
 </section>
 

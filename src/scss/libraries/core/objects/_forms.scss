@@ -36,6 +36,11 @@
 		@include radius($border-radius);
 		outline: none;
 		cursor: text;
+
+		&:focus {
+			border-color: darken($medium-color, 15);
+			box-shadow: 0 2px 0 darken($medium-color, 10);
+		}
 	}
 
 	textarea {

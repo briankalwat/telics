@@ -4,12 +4,18 @@
 
 <section class="background-medium">
     <div class="shell">
-        <div class="grid soft--ends centered">
+        <div class="grid soft-half--ends centered">
             <div class="grid__item lap-and-up-one-half handheld-centered flush">
                 {% include "_embeds/_signin-form" %}
             </div>
         </div>
     </div>
 </section>
+
+<script>
+	$(document).ready(function(){
+		$('#loginName').focus();
+	});
+</script>
 
 {% endblock %}

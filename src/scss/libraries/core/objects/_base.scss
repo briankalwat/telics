@@ -44,6 +44,10 @@ html {
             animation: sk-rotateplane 1s infinite ease-in-out;
         }
     }
+
+    &.modal-open {
+        overflow: hidden;
+    }
 }
 
 
@@ -107,18 +111,18 @@ body {
 hr {
     border: 0px solid transparent;
     border-top: $border-size*2 solid lighten($medium-color, 40);
-
-    &.short {
-        margin: $base-spacing-unit auto;
-        max-width: $base-spacing-unit*2;
-    }
-
-    &.hidden {
-        border-width: 0px;
-    }
+    margin-bottom: $base-spacing-unit;
 
     .background-dark & {
         border-color: darken($secondary-color, 15);
+    }
+
+    .background-medium & {
+        border-color: darken($medium-color, 5);
+    }
+
+    @include media-query(handheld) {
+        margin-bottom: $base-spacing-unit/2;
     }
 }
 

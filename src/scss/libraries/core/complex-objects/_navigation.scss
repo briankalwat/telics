@@ -10,6 +10,7 @@ nav {
 		li {
 			display: inline-block;
 			margin: 0px;
+			vertical-align: top;
 
 			a {
 				display: inline-block;
@@ -156,7 +157,7 @@ nav {
 $icon-size: 46px;
 $icon-stroke: 8px;
 
-.nav-close {
+.close {
 	position: absolute;
 	top: $icon-size/3*2;
 	right: $icon-size/3*2;
@@ -186,11 +187,5 @@ $icon-stroke: 8px;
 		width: $icon-stroke;
 		margin-left: -$icon-stroke/2;
 		background-color: $tertiary-color;
-	}
-
-	&:hover {
-		&:before, &:after {
-			background-color: $light-color;
-		}
 	}
 }

@@ -1,14 +1,33 @@
 <script>
-	$('a[data-trigger="mobilenav"]').on('click', function() {
-		$('html').toggleClass('nav-open');
-		return false;
-	});
+	$(document).ready(function() {
 
-	$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
+		// Data Triggers for States
+		// TODO - Dry this up so it is based off the value of data-trigger
+		$('a[data-trigger="mobilenav"]').on('click', function() {
+			$('html').toggleClass('nav-open');
+			return false;
+		});
 
-	$('a:not([data-trigger])').on('click', function() {
-		$('html').removeClass();
-		$('html').addClass('loading');
-		$('body').remove();
+		$('a[data-modal-close]').on('click', function() {
+			$('html').removeClass('modal-open')
+			$(this).parents('.modal').removeClass('modal-open');
+			return false;
+		});
+
+		$('a[data-modal]').on('click', function(){
+			$('html').addClass('modal-open')
+			modal = '.' + $(this).attr("data-modal");
+			$(modal).addClass('modal-open');
+			return false;
+		});
+
+		$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
+
+		$('a:not([data-trigger], [data-modal], [data-modal-close])').on('click', function() {
+			$('html').removeClass();
+			$('html').addClass('loading');
+			$('body').remove();
+		});
+
 	});
 </script>

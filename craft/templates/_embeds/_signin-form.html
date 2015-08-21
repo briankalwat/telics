@@ -1,8 +1,9 @@
 <form id="signin-form" method="post" accept-charset="UTF-8">
+
     {{ getCsrfInput() }}
     <input type="hidden" name="action" value="users/login">
     
-    <h1 class="centered">Sign In</h1>
+    <h1>Sign In</h1>
     <input id="loginName" type="text" name="loginName"
         value="{{ craft.session.rememberedUsername }}" placeholder="username">
 

@@ -3,20 +3,24 @@
 
 		<a href="/" class="logo float--left" data-loading="y">{% include "_embeds/_logo-original" %}</a>
 
-		{# <div class="usernav">
-			<i class="fa fa-user"></i>
-		</div> #}
-
 		<nav class="visuallyhidden--portable visuallyhidden--handheld flush">
 			<ul>
-				{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
-					<a href="{{ entry.url }}" data-loading="y">{{ entry.title }}</a>
+				<li class="usernav-trigger">
+					<a href="/dashboard">
+						{% if currentUser %}
+							<img src="{% if currentUser.getPhotoUrl != '' %}{{ currentUser.getPhotoUrl(160) }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="">
+						{% else %}
+							<i class="fa fa-user"></i>
+						{% endif %}
+					</a>
+				</li>{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
+					<a href="{{ entry.url }}">{{ entry.title }}</a>
 				</li>{% endfor %}
 			</ul>
 		</nav>
 		<nav class="visuallyhidden--anchored flush">
 			<ul>
-				<li><a href="#" class="nav-trigger" data-trigger='mobilenav'><i class="fa fa-fw fa-bars"></i> Menu</a></li>
+				<li><a href="#" data-trigger="mobilenav" class="nav-trigger"><i class="fa fa-fw fa-bars"></i> MENU</a></li>
 			</ul>
 		</nav>
 	</div>
