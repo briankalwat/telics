@@ -1,6 +1,7 @@
 @if $use-headings == true {
 
 	@include headings(1,6) {
+		display: inline-block;
 	  	font-family: $base-heading-font;
 	  	margin-bottom: $base-spacing-unit/2;
 

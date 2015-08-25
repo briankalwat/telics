@@ -6,7 +6,7 @@
 $brand-color: 		#3755A5;
 $primary-color:    	$brand-color;
 $secondary-color:  	#DC952A;
-$tertiary-color:   	desaturate(darken($primary-color, 25), 30);
+$tertiary-color:   	desaturate(darken($primary-color, 25), 10);
 
 $cta-color: 		$primary-color;
 

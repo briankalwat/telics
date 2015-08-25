@@ -23,7 +23,7 @@
 
 		$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
 
-		$('a:not([data-trigger], [data-modal], [data-modal-close])').on('click', function() {
+		$('a[data-loading]').on('click', function() {
 			$('html').removeClass();
 			$('html').addClass('loading');
 			$('body').remove();

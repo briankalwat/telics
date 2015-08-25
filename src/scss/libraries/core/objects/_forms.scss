@@ -5,12 +5,62 @@
 		font-size: $font-size;
 		line-height: $line-height;
 		text-align: left !important;
+		border: 0px;
 		// -webkit-appearance:none;
+	}
+
+	fieldset {
+		padding: 0px;
 	}
 
 	form {
 		h5 {
 			margin-bottom: $base-spacing-unit/4;
+		}
+	}
+
+	.heading {
+		label {
+			display: none;
+		}
+
+		.instructions {
+			line-height: $line-height*.9;
+			margin-bottom: 4px;
+		}
+	}
+
+	#field-153 {
+		font-weight: 700;
+		line-height: $line-height*.8;
+
+		input {
+			position: relative;
+			top: 6px;
+			margin-bottom: $base-spacing-unit;
+			margin-right: $base-spacing-unit/3;
+			float: left;
+
+			@include media-query(handheld) {
+				margin-right: 10px;
+			}
+		}
+
+		.instructions {
+			margin-bottom: $base-spacing-unit/2;
+			font-size: $font-size*.8;
+			line-height: $line-height*.7;
+			font-weight: normal;
+		}
+	}
+
+	.field, .fb-field {
+		margin-bottom: $base-spacing-unit/2;
+
+		&.radio {
+			label {
+				margin-bottom: 0;
+			}
 		}
 	}
 
@@ -24,22 +74,21 @@
 	}
 
 	input {
-		margin-bottom: $base-spacing-unit/4;
 		@include vendor(transition, all $global-duration*2 $global-function);
 	}
 
-	input[type=text], input[type=password], textarea {
+	input[type=text], input[type=password], input[type=email], textarea {
 		width: 100%;
 		padding: $base-spacing-unit/5 $base-spacing-unit/3;
-		border: 1px solid $medium-color;
-		box-shadow: 0 2px 0 darken($medium-color, 3);
+		background-color: $medium-color;
 		@include radius($border-radius);
 		outline: none;
 		cursor: text;
 
 		&:focus {
 			border-color: darken($medium-color, 15);
-			box-shadow: 0 2px 0 darken($medium-color, 10);
+			background-color: darken($medium-color, 15);
+			// box-shadow: 0 2px 0 darken($medium-color, 10);
 		}
 	}
 

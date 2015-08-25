@@ -1,5 +1,7 @@
 {% extends "_master" %}
 
+{% set pageTitle = "Apply" %}
+
 {% set positionSlug = craft.request.getSegment(2) %}
 
 {% block content %}
@@ -7,12 +9,14 @@
 	{% for entry in craft.entries.slug(positionSlug) %}
 
 		{% if entry.pageTitle == 1 %}
-			{% include "_embeds/_page-hero" with {'pageTitle': 'Application'} %}
+			{% include "_embeds/_page-hero" with {'pageTitle': entry.title } %}
 		{% endif %}
+
+		{# {% include "_embeds/_page-content" %} #}
 
 	{% endfor %}
 
-		{% include "_embeds/_page-content" %}
+		
 		
 		<section class="background-medium">
 			<div class="shell">

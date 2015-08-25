@@ -9,12 +9,7 @@
 	{% include "_embeds/_page-content" %}
 	
 	{% if entry.type == 'jobListing' %}
-		<section class="background-tertiary">
-			<div class="shell centered">
-				<h1>Apply Online</h1>
-				<a href="/{{ entry.ancestors.first.slug }}/{{ entry.slug }}/apply" class="btn">Submit Application</a>
-			</div>
-		</section>
+		{% include "_embeds/_application" %}
 	{% endif %}
 
 	{% include "_embeds/_breadcrumbs" %}

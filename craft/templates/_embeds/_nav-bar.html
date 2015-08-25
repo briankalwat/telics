@@ -6,7 +6,7 @@
 		<nav class="visuallyhidden--portable visuallyhidden--handheld flush">
 			<ul>
 				<li class="usernav-trigger">
-					<a href="/dashboard">
+					<a href="/dashboard" data-loading>
 						{% if currentUser %}
 							<img src="{% if currentUser.getPhotoUrl != '' %}{{ currentUser.getPhotoUrl(160) }}{% else %}/assets/images/default-avatar-user.png{% endif %}" alt="">
 						{% else %}
@@ -14,7 +14,7 @@
 						{% endif %}
 					</a>
 				</li>{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
-					<a href="{{ entry.url }}">{{ entry.title }}</a>
+					<a href="{{ entry.url }}"  data-loading>{{ entry.title }}</a>
 				</li>{% endfor %}
 			</ul>
 		</nav>
