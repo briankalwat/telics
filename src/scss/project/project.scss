@@ -190,43 +190,6 @@ $user-trigger-size: $base-spacing-unit/8*7;
 	}
 }
 
-.modal {
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	left: 0px;
-	background-color: $primary-color;
-	transform: scale(.9);
-	z-index: -1;
-	opacity: 0;
-	@include vendor(transition, all $global-duration $global-function);
-
-	.close {
-		width: $base-spacing-unit*.75;
-		height: $base-spacing-unit*.75;
-	}
-
-	.modal-inner {
-		position: relative;
-		max-width: 80%;
-		max-height: 80%;
-		max-width: 600px;
-		padding: $base-spacing-unit/2;
-		padding-bottom: 0;
-		overflow: hidden;
-		background-color: $light-color;
-		@include radius($border-radius*3);
-	}
-
-	&.modal-open {
-		transform: scale(1);
-		z-index: 2000;
-		opacity: 1;
-		@include vendor(transition, all $global-duration $global-function);
-	}
-}
-
 #signin-form {
 	max-width: 400px;
 	margin: 0 auto;

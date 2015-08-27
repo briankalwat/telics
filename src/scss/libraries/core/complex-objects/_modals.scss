@@ -1,5 +1,40 @@
 @if $use-modals == true {
 
+	.modal {
+		position: fixed;
+		top: 0px;
+		right: 0px;
+		bottom: 0px;
+		left: 0px;
+		background-color: $primary-color;
+		transform: scale(.9);
+		z-index: -1;
+		opacity: 0;
+		@include vendor(transition, all $global-duration $global-function);
 
+		.close {
+			width: $base-spacing-unit*.75;
+			height: $base-spacing-unit*.75;
+		}
+
+		.modal-inner {
+			position: relative;
+			max-height: 80%;
+			max-width: 600px;
+			width: 50%;
+			padding: $base-spacing-unit/2;
+			padding-bottom: 0;
+			background-color: $light-color;
+			@include radius($border-radius*3);
+			overflow: auto;
+		}
+
+		&.modal-open {
+			transform: scale(1);
+			z-index: 2000;
+			opacity: 1;
+			@include vendor(transition, all $global-duration $global-function);
+		}
+	}
 
 }

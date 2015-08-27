@@ -23,6 +23,8 @@
 
 		$('.chosen-select').chosen({allow_single_deselect: true, disable_search: true});
 
+		$('.chosen-multi-select').chosen({allow_single_deselect: true});
+
 		$('a[data-loading]').on('click', function() {
 			$('html').removeClass();
 			$('html').addClass('loading');

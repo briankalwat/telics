@@ -11,7 +11,7 @@
 			<div class="shell">
 				<div class="grid soft-half--ends {% if block.alignment == 'left' %}left {% elseif block.alignment == 'right' %}right {% else %}centered {% endif %}">
 					<div class="grid__item {% if block.alignment != 'center' %}lap-and-up-two-thirds {% else %}lap-and-up-three-quarters {% endif %}">
-						{% if block.heading %}<h2>{{ block.heading }}</h2>{% endif %}
+						{% if block.heading %}<h2 class="capitalize">{{ block.heading }}</h2>{% endif %}
 						{% if block.body %}
 							{{ include(template_from_string(block.body)|raw) }}
 						{% endif %}
@@ -35,7 +35,7 @@
 
 					{# Heading #}
 					{% if block.heading %}<div class="grid__item">
-						<h1>{{ block.heading }}</h1>
+						<h1 class="capitalize">{{ block.heading }}</h1>
 					</div>{% endif %}
 
 					{% if block.kind == 'channel' %}
@@ -78,7 +78,7 @@
 
 					{# Heading #}
 					{% if block.heading %}<div class="grid__item">
-						<h1>{{ block.heading }}</h1>
+						<h1 class="capitalize">{{ block.heading }}</h1>
 					</div>{% endif %}
 
 					{% for user in block.users %}<div class="grid__item {{ block.width }}">
@@ -101,7 +101,7 @@
 
 				{# Heading #}
 				{% if block.heading %}<div class="grid__item">
-					<h1>{{ block.heading }}</h1>
+					<h1 class="capitalize">{{ block.heading }}</h1>
 				</div>{% endif %}
 	{% endif %}{#
 

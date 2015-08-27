@@ -4,10 +4,10 @@
     <input type="hidden" name="action" value="users/login">
     
     <h1>Sign In</h1>
-    <input id="loginName" type="text" name="loginName"
-        value="{{ craft.session.rememberedUsername }}" placeholder="username">
+    <p class="full-width"><input id="loginName" type="text" name="loginName"
+            value="{{ craft.session.rememberedUsername }}" placeholder="username"></p>
 
-    <input id="password" type="password" name="password" placeholder="password">
+    <p class="full-width"><input id="password" type="password" name="password" placeholder="password"></p>
 
     {# <label class="full-width centered">
         <input type="checkbox" name="rememberMe" value="1">
@@ -16,9 +16,10 @@
 
     <input type="submit" value="Sign In" class="btn full-width centered">
 
-    <p class="centered"><a href="{{ url('forgotpassword') }}">Forget your password?</a></p>
+    <p class="centered"><a href="#" data-modal="forgotpassword">Forget your password?</a></p>
 
     {% if errorMessage is defined %}
         <p>{{ errorMessage }}</p>
     {% endif %}
+
 </form>

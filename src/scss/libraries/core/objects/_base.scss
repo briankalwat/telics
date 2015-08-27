@@ -176,10 +176,6 @@ hr {
     * { 
         text-align: center; 
     }
-
-    p {
-        display: inline-block;
-    }
 }
 
 @include namespace(left) {
@@ -195,10 +191,6 @@ hr {
 
     * { 
         text-align: right; 
-    }
-
-    p {
-        display: inline-block;
     }
 }
 
