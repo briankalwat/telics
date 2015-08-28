@@ -26,11 +26,11 @@
 	</div>
 </section>
 
+{% if currentUser.documents|length %}
 <section class="background-dark">
 	<div class="shell">
 		<div class="grid">
 			<div class="grid__item">
-				{% if currentUser.documents|length %}
 					<h1>Documents</h1>
 					<table class="background-light">
 						<tr>
@@ -44,11 +44,11 @@
 							</tr>
 						{% endfor %}
 					</table>
-				{% endif %}
 			</div>
 		</div>
 	</div>
 </section>
+{% endif %}
 
 <section class="background-primary">
 	<div class="shell">
