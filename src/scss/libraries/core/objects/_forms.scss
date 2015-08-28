@@ -6,12 +6,15 @@
 		line-height: $line-height;
 		text-align: left !important;
 		border: 0px;
-		// -webkit-appearance:none;
 	}
 
 	fieldset {
 		padding: 0px;
 		margin: 0px;
+	}
+
+	select {
+		width: 100%;
 	}
 
 	form {
