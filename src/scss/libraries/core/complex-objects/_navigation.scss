@@ -1,3 +1,7 @@
+html.nav-open {
+	overflow: hidden;
+}
+
 // Navigation Lists
 nav {
 	margin-bottom: $base-spacing-unit;
@@ -92,6 +96,16 @@ nav {
 		opacity: 0;
 	}
 
+	.close {
+		@include media-query(lap-and-up) {
+			&:hover {
+				&:before, &:after {
+					background-color: $light-color;
+				}
+			}
+		}
+	}
+
 	.nav-open & {
 		top: 0px;
 		right: 0px;
@@ -125,10 +139,20 @@ nav {
 				width: 100%;
 				border: 0px;
 				text-align: left;
-				font-size: $font-size*3.5;
-				padding: $base-spacing-unit*.75 $base-spacing-unit;
+				font-size: $font-size*3;
+				padding: $base-spacing-unit/2 $base-spacing-unit;
 				color: $tertiary-color;
-				@include vendor(transition, all 0 $global-function);
+				transition: none;
+			}
+
+			@include media-query(lap-and-up) {
+				&:hover {
+					a {
+						background-color: inherit;
+						color: $light-color;
+						border-color: transparent;
+					}
+				}
 			}
 
 			@include media-query(handheld) {
@@ -138,7 +162,7 @@ nav {
 
 					&:hover {
 						background-color: transparent;
-						color: $light-color;
+						color: $tertiary-color;
 					}
 				}
 			}
