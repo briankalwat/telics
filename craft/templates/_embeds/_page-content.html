@@ -5,6 +5,7 @@
 	#}{% if block.type == 'adUnit' %}
 		{% set image = block.backgroundImage.first %}
 		<section class="{% if image %}image-fill overlay {% endif %}{{ block.backgroundColor }}">
+			<!-- Ad Unit -->
 			{% if image %}
 				<div class="image__item image-blur" style="background-image: url('{{ image.url }}');"></div>
 			{% endif %}
@@ -30,6 +31,7 @@
 
 	#}{% if block.type == 'entriesLoop' %}
 		<section class="{{ block.backgroundColor }}">
+			<!-- Entries Loop -->
 			<div class="shell">
 				<div class="grid {% if block.enableCards == 1 %}grid--condensed {% endif %}">
 
@@ -73,6 +75,7 @@
 
 	#}{% if block.type == 'usersLoop' %}
 		<section class="{{ block.backgroundColor }}">
+			<!-- Users Loop -->
 			<div class="shell">
 				<div class="grid {% if block.enableCards == 1 %}grid--condensed {% endif %}">
 
@@ -96,6 +99,7 @@
 
 	#}{% if block.type == 'customSection' %}
 		<section class="{{ block.backgroundColor }}">
+			<!-- Custom Section Start -->
 			<div class="shell">
 				<div class="grid {% if block.condensedSection == 1 %}grid--condensed {% endif %} handheld-centered">
 
@@ -108,12 +112,13 @@
 	#}{% if block.type == 'customSectionEnd' %}
 				</div>
 			</div>
+			<!-- Custom Section End -->
 		</section>
 	{% endif %}{#
 
 	Body Element
 
-	#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.width }} {% if block.alignment == 'center' %}centered {% else %}{{ block.alignment }} {% endif %}">
+	#}{% if block.type == 'bodyElement' %}<div class="grid__item {{ block.width }} {% if block.alignment == 'center' %}centered {% else %}{{ block.alignment }} {% endif %}"><!-- Body Element -->
 		{% if block.enableCards == 1 %}<div class="card">{% endif %}
 		{% if block.body %}
 			{{ include(template_from_string(block.body)|raw) }}
@@ -123,7 +128,7 @@
 
 	Blockquote Element
 
-	#}{% if block.type == 'blockquoteElement' %}<div class="grid__item {{ block.width }}">
+	#}{% if block.type == 'blockquoteElement' %}<div class="grid__item {{ block.width }}"><!-- Blockquote Element -->
 		<blockquote class="flush">
 			{{ block.blockquote }}
 			<footer>{{ block.source }}</footer>
@@ -132,7 +137,7 @@
 
 	User Element
 
-	#}{% if block.type == 'userElement' %}{% for user in block.user %}<div class="grid__item {{ block.width }}">
+	#}{% if block.type == 'userElement' %}{% for user in block.user %}<div class="grid__item {{ block.width }}"><!-- User Element -->
 		
 		{% include '_embeds/_user-data' %}
 
@@ -140,7 +145,7 @@
 
 		Contact Form Element
 
-	#}{% if block.type == 'contactFormElement' %}<div class="grid__item {{ block.width }}">
+	#}{% if block.type == 'contactFormElement' %}<div class="grid__item {{ block.width }}"><!-- Contact Form Element -->
 		{% include "_embeds/_contact-element" %}
 	</div>{% endif %}{# 
 #}{% endfor %}

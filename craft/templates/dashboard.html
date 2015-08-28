@@ -19,9 +19,19 @@
 			</div><div class="grid__item anchored-two-thirds">
 				{{ currentUser.body }}
 			</div><div class="grid__item anchored-one-third">
+				{{ currentUser.sidebar }}
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<section class="background-dark">
+	<div class="shell">
+		<div class="grid">
+			<div class="grid__item">
 				{% if currentUser.documents|length %}
-					{{ currentUser.sidebar }}
-					<h2>Documents</h2>
+					<h1>Documents</h1>
 					<table class="background-light">
 						<tr>
 							<th>Name</th>
@@ -37,7 +47,6 @@
 				{% endif %}
 			</div>
 		</div>
-
 	</div>
 </section>
 

@@ -1,6 +1,7 @@
 {% extends "_master" %}
 
 {% block content %}
+	{% cache %}
 
 	{% if entry.pageTitle == 1 %}
 		{% include "_embeds/_page-hero" %}
@@ -20,15 +21,9 @@
 				</div>
 			</div>
 		</section>
-		
-		<div class="modal floating application">
-			<a href="#" data-modal-close class="close"></a>
-			<div class="floating__item modal-inner">
-				{% include "_embeds/_application" %}	
-			</div>
-		</div>
 	{% endif %}
 
 	{% include "_embeds/_breadcrumbs" %}
 
+	{% endcache %}
 {% endblock %}

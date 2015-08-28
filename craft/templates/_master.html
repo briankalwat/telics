@@ -3,33 +3,39 @@
 <head>
 	<meta charset="utf-8" />
 	<title>{% if pageTitle %}{{ pageTitle}}{% else %}{{ entry.title }} {% for parent in entry.ancestors|reverse %}| {{ parent.title }} {% endfor %}{% endif %} | {{ siteName }}</title>
-	<link rel="home" href="{{ siteUrl }}" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="/assets/js/chosen.jquery.min.js"></script>
-	<script src="//use.typekit.net/sbc2gns.js"></script>
-	<script>try{Typekit.load();}catch(e){}</script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/assets/css/master.min.css">
+
+	{% cache globally using key "meta" %}
+		<link rel="home" href="{{ siteUrl }}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src="/assets/js/chosen.jquery.min.js"></script>
+		<script src="//use.typekit.net/sbc2gns.js"></script>
+		<script>try{Typekit.load();}catch(e){}</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="/assets/css/master.min.css">
+	{% endcache %}
 </head>
 <body>
 
-	{% set firstSegment = craft.request.firstSegment %}
-	{% set lastSegment = craft.request.lastSegment %}
+{% set firstSegment = craft.request.firstSegment %}
+{% set lastSegment = craft.request.lastSegment %}
 
-	{% include "_embeds/_mobile-nav" %}
+{% include "_embeds/_mobile-nav" %}
 
-	{% include "_embeds/_nav-bar" %}
+{% include "_embeds/_nav-bar" %}
 
-	{% block content %}
+{% block content %}
 
-		{# Extending Template's Contents Injected Here #}
-		
-	{% endblock %}
+	{# Extending Template's Contents Injected Here #}
 	
-	{% include "_embeds/_footer" %}
+{% endblock %}
 
-	{% include "_embeds/_global-scripts" %}
+{% cache globally using key "footer" %}
+		
+		{% include "_embeds/_footer" %}
 
-</body>
-</html>
+		{% include "_embeds/_global-scripts" %}
+
+	</body>
+	</html>
+{% endcache %}
