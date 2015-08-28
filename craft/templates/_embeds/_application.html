@@ -3,6 +3,8 @@
 {% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
 
 {% block content %}
+	{% for entry in craft.entries.slug(slug).limit(1) %}
+			<h2 id="position" class="hidden">{{ entry.title }}</h2>
 
 			<form method="post" accept-charset="utf-8" name="{{ form.handle }}" class="formbuilder-form" id="{{ form.handle }}" data-parsley-errors-container=".formbuilder-notification"{% if form.hasFileUploads %} enctype="multipart/form-data" {% endif %}>
 					
@@ -35,5 +37,14 @@
 					<button type="submit" class="btn full-width centered">Submit Application</button>
 
 			</form>
-
+	{% endfor %}
 {% endblock %}
+
+<script>
+	// Pre-populates position field with referring page's title
+	$(document).ready(function(){
+		var position = $('#position').html();
+		console.log(position);
+		$('#field-119').val(position);
+	});
+</script>
