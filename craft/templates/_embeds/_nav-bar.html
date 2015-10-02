@@ -16,9 +16,9 @@
 							<i class="fa fa-user"></i>
 						{% endif %}
 					</a>
-				</li>{% for entry in craft.entries.section('pages').level(1) %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
+				</li>{% for entry in craft.entries.section('pages').level(1) %}{% if entry.showInNavigation %}<li {% if firstSegment == entry.slug %}class="active"{% endif %}>
 					<a href="{{ entry.url }}"  data-loading>{{ entry.title }}</a>
-				</li>{% endfor %}
+				</li>{% endif %}{% endfor %}
 			</ul>
 		</nav>
 		<nav class="visuallyhidden--anchored flush">

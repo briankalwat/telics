@@ -3,9 +3,9 @@
 	<nav class="centered__item">
 		<ul class="flush">
 			{% set pages = craft.entries.section('pages').level('1') %}
-			{% nav page in pages %}<li>
+			{% nav page in pages %}{% if page.showInNavigation %}<li>
 				{{ page.getLink() }}
-			</li>{% endnav %}
+			</li>{% endif %}{% endnav %}
 		</ul>
 	</nav>
 	</div>
