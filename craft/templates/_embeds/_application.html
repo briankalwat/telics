@@ -4,13 +4,6 @@
 	{% endfor %}
 {% endblock %}
 
-{{ craft.sproutForms.displayForm('employmentApplication') }}
+<h1>Apply Now</h1>
 
-<script>
-	// Pre-populates position field with referring page's title
-	$(document).ready(function(){
-		var position = $('#position').html();
-		console.log(position);
-		$('#fields-position').val(position);
-	});
-</script>
+{{ craft.sproutForms.displayForm('employmentApplication') }}
