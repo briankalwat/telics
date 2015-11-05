@@ -1,6 +1,6 @@
 @if $use-buttons == true {
 
-	.btn, input[type=button] {
+	.btn, input[type=button], input[type=submit] {
 		display: inline-block;
 		font-family: $base-heading-font;
 		font-size: $button-size*1.1;
