@@ -3,6 +3,7 @@
 # Craft Directories
 craft/.DS_Store
 craft/app
+craft/backup
 craft/config
 craft/plugins
 craft/storage

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
 <head>
 	<meta charset="utf-8" />
-	<title>{% if pageTitle %}{{ pageTitle}}{% else %}{{ entry.title }} {% for parent in entry.ancestors|reverse %}| {{ parent.title }} {% endfor %}{% endif %} | {{ siteName }}</title>
+	<title>{% if pageTitle %}{{ pageTitle }}{% else %}{{ entry.title }} {% for parent in entry.ancestors|reverse %}| {{ parent.title }} {% endfor %}{% endif %} | {{ siteName }}</title>
 
 	{% cache globally using key "meta" %}
 		<link rel="home" href="{{ siteUrl }}" />

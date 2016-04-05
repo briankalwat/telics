@@ -1,0 +1,79 @@
+{% set form = craft.formBuilder.getFormByHandle('contactForm') %}
+{% set tabs = form.fieldLayout.getFieldLayout().getTabs() %}
+{% set pluginScripts = craft.formBuilder.pluginScripts(form) %}
+
+{% block content %}
+    {# Error/Success Messages #}
+    {% if craft.session.hasFlash('error') or craft.session.hasFlash('success') %}
+      {% if craft.session.hasFlash('error') %}<div class="formbuilder-notification"><p class="error-message">{{ craft.session.getFlash('error') | raw }}<p></div>{% endif %}
+      {% if craft.session.hasFlash('success') %}<div class="formbuilder-notification success"><p class="success-message">{{ craft.session.getFlash('success') | raw }}</p></div>{% endif %}
+    {% else %}
+      <div class="formbuilder-notification"></div>
+    {% endif %}
+        
+    <form method="post" accept-charset="utf-8" name="{{ form.handle }}" class="formbuilder-form" id="{{ form.handle }}" data-parsley-errors-container=".formbuilder-notification"{% if form.hasFileUploads %} enctype="multipart/form-data" {% endif %}>
+
+        <input type="hidden" name="action" value="formBuilder/entries/saveFormEntry">
+        <input type="hidden" name="formredirect" data-redirect="{{form.successPageRedirect}}" value="{{form.redirectUrl}}">
+        <input type="hidden" name="formHandle" value="{{form.handle}}">
+
+        {% for tab in tabs %}
+          {% set fields = tab.getFields() %}
+          
+          <fieldset class="{{loop.index}}">
+            {% for field in fields %}
+              {% set input = craft.formBuilder.getInputHtml(field) %}
+              {{ input | raw }}
+            {% endfor %} 
+          </fieldset>
+          
+        {% endfor %}
+
+        <button type="submit" class="btn full-width centered flush">Send Message</button>
+
+    </form>
+{% endblock %}
+
+{# {% macro errorList(errors) %}
+    {% if errors %}
+        <ul class="errors">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endmacro %}
+
+{% from _self import errorList %}
+
+<form method="post" action="" accept-charset="UTF-8">
+    {{ getCsrfInput() }}
+    <input type="hidden" name="action" value="contactForm/sendMessage">
+    <input type="hidden" name="redirect" value="contact/thanks">
+
+    <div class="grid">
+        <div class="grid__item">
+            <input id="fromName" type="text" name="fromName" placeholder="Name" value="">
+            {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+        </div><div class="grid__item">
+            <input id="phone" type="text" name="message[Phone]" placeholder="Phone Number" value="">
+            {{ message is defined and message ? errorList(message.getErrors('message[Phone]')) }}
+        </div><div class="grid__item">
+            <input id="fromEmail" type="text" name="fromEmail" placeholder="Email Address" value="">
+            {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+        </div><div class="grid__item">
+            <select id="subject" name="subject" class="chosen-select">
+                <option value="General Question">General Question</option>
+                <option value="Project Inquiry">Project Inquiry</option>
+                <option value="Website Problem">Website Problem</option>
+            </select>
+        </div><div class="grid__item push-half--bottom">
+            <textarea rows="5" cols="40" id="message" name="message" placeholder="Enter Your Message...">{% if message is defined %}{{ message.message }}{% endif %}</textarea>
+            {{ message is defined and message ? errorList(message.getErrors('message')) }}
+        </div>
+    </div>
+
+    <input id="verification" name="verification" type="text" placeholder="verfication">
+
+    <input type="submit" value="Send Message" class="btn full-width centered">
+</form> #}

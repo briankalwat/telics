@@ -143,9 +143,10 @@
 
 	</div>{% endfor %}{% endif %}{#
 
-		Contact Form Element
+		Form Element
 
-	#}{% if block.type == 'contactFormElement' %}<div class="grid__item {{ block.width }}"><!-- Contact Form Element -->
-		{% include "_embeds/_contact-element" %}
+	#}{% if block.type == 'formElement' %}<div class="grid__item {{ block.width }}"><!-- Contact Form Element -->
+		{% set form = block.formName %}
+		{% include "_embeds/_form-element" with {'form': ''~form~''} %}
 	</div>{% endif %}{# 
 #}{% endfor %}
