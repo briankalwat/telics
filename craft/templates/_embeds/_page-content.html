@@ -1,5 +1,11 @@
 {% for block in entry.pageContent %}{#
 
+	SECTION - CUSTOM CODE
+
+	#}{% if block.type == 'customCode' %}
+		{{ block.codeBlock|raw }}
+	{% endif %}{#
+
 	SECTION - AD UNIT 
 
 	#}{% if block.type == 'adUnit' %}
